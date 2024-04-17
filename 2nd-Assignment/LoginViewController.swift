@@ -89,7 +89,7 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
             $0.leading.equalToSuperview().offset(51)
         }
         nicknameButton.snp.makeConstraints{
-            //$0.width.equalTo(128)
+            $0.width.equalTo(128)
             $0.height.equalTo(22)
             $0.top.equalTo(findID.snp.top).offset(50)
             $0.leading.equalTo(noAccount.snp.leading).offset(146)
@@ -99,7 +99,7 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "TVING ID 로그인"
-        label.font = UIFont(name: "Pretendard-Regular", size: 50)
+        label.font = UIFont(name: "Pretendard-Medium", size: 23)
         label.textColor = UIColor(named: "gray1")
         return label
     }()
@@ -114,8 +114,8 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         textField.backgroundColor = UIColor(named: "gray4")
         textField.clearButtonMode = .always
         textField.layer.cornerRadius = 3
+        textField.textColor = UIColor(named: "gray2")
         textField.addLeftPadding(padding: 17)
-        
         return textField
     }()
     
@@ -154,6 +154,7 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         textField.isSecureTextEntry = true
         textField.rightViewMode = .always
         textField.layer.cornerRadius = 3
+        textField.textColor = UIColor(named: "gray2")
         textField.addLeftPadding(padding: 17)
         return textField
     }()
@@ -164,10 +165,10 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         button.isEnabled = false
         button.setTitleColor(UIColor(named: "gray1"), for: .disabled)
-        
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor(named: "gray4")?.cgColor
         button.backgroundColor = .black
+        button.contentHorizontalAlignment = .center
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -217,9 +218,10 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
     
     private let nicknameButton: UIButton = {
         let button = UIButton()
-        button.setTitle("닉네임 만들러 가기", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+        button.setTitle("닉네임 만들러가기", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Pretendard-Regular", size: 14)
         button.setTitleColor(UIColor(named: "gray2"), for: .normal)
+        button.setUnderline()
         button.addTarget(self, action: #selector(nicknameButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -243,5 +245,17 @@ extension LoginViewController: UITextFieldDelegate{
     }
     func textFieldDidChangeSelection(_ textField: UITextField) {
         updateLoginButton()
+    }
+}
+
+extension UIButton {
+    func setUnderline() {
+        guard let title = title(for: .normal) else { return }
+        let attributedString = NSMutableAttributedString(string: title)
+        attributedString.addAttribute(.underlineStyle,
+                                      value: NSUnderlineStyle.single.rawValue,
+                                      range: NSRange(location: 0, length: title.count)
+        )
+        setAttributedTitle(attributedString, for: .normal)
     }
 }

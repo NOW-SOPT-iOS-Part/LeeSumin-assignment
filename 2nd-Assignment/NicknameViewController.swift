@@ -34,7 +34,7 @@ class NicknameViewController: UIViewController, UITextFieldDelegate{
             $0.top.equalToSuperview().offset(50)
             //$0.left.equalToSuperview().offset(20)
             $0.left.equalTo(nicknameTextField)
-            $0.width.equalTo(200)
+            //$0.width.equalTo(200)
             $0.height.equalTo(27)
         }
         nicknameTextField.snp.makeConstraints{
@@ -58,7 +58,7 @@ class NicknameViewController: UIViewController, UITextFieldDelegate{
         let label = UILabel()
         label.text = "닉네임을 입력해주세요"
         label.textColor = .black
-        label.font = UIFont(name: "Pretendard-Regular", size: 23)
+        label.font = UIFont(name: "Pretendard-Medium", size: 23)
         return label
     }()
     
