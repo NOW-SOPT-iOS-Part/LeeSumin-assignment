@@ -8,7 +8,12 @@
 import UIKit
 import SnapKit
 
-class NicknameViewController: UIViewController, UITextFieldDelegate {
+protocol SendNicknameProtocol: AnyObject {
+    func didEnterNickname(_ nickname: String?)
+}
+
+class NicknameViewController: UIViewController, UITextFieldDelegate{
+    weak var delegate: SendNicknameProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +21,8 @@ class NicknameViewController: UIViewController, UITextFieldDelegate {
         setupLayout()
         nicknameTextField.delegate = self
     }
-    
+
+
     private func setupLayout(){
         view.backgroundColor = .white
         
@@ -87,11 +93,11 @@ class NicknameViewController: UIViewController, UITextFieldDelegate {
         return button
     }()
     
-    
     @objc func finishButtonTapped(){
-        LoginViewController().nickname = nicknameTextField.text
+        delegate?.didEnterNickname(nicknameTextField.text)
         self.dismiss(animated: true)
     }
-    
 
 }
+
+

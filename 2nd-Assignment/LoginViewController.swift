@@ -8,9 +8,13 @@
 import UIKit
 import SnapKit
 
-class LoginViewController: UIViewController {
-    
+class LoginViewController: UIViewController, SendNicknameProtocol{
     var nickname : String?
+    
+    func didEnterNickname(_ nickname: String?) {
+        self.nickname = nickname
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
@@ -163,12 +167,25 @@ class LoginViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         button.setTitleColor(UIColor(named: "gray1"), for: .normal)
         button.backgroundColor = UIColor(named: "BrandColor")
+        button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
     private func changeLoginButtonColor(){
         loginButton.backgroundColor = .red
     }
+    
+    @objc func loginButtonTapped(){
+        let vc = WelcomeViewController()
+        if nickname != nil{
+            vc.welcomeName = nickname
+        }
+        else{
+            vc.welcomeName = idTextField.text
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     private let findID : UILabel = {
         let label = UILabel()
@@ -206,6 +223,7 @@ class LoginViewController: UIViewController {
     @objc func nicknameButtonTapped(){
         let vc = NicknameViewController()
         setSheetLayout(for: vc)
+        vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
     
