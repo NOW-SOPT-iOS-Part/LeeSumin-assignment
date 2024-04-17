@@ -17,6 +17,8 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        idTextField.delegate = self
+        pwTextField.delegate = self
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         setupLayout()
     }
@@ -113,11 +115,6 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         textField.clearButtonMode = .always
         textField.layer.cornerRadius = 3
         textField.addLeftPadding(padding: 17)
-        /*
-        textField.layer.borderColor = CGColor(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
-        UIColor(red: 1, green: 227/255, blue: 227/255, alpha: 1)
-        textField.layer.borderWidth = 1
-         */
         
         return textField
     }()
@@ -229,3 +226,12 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
     
 }
 
+extension LoginViewController: UITextFieldDelegate{
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor(named: "gray2")?.cgColor
+        textField.layer.borderWidth = 1
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 0
+    }
+}
