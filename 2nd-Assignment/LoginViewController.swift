@@ -21,6 +21,8 @@ class LoginViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(idTextField)
         view.addSubview(pwTextField)
+        view.addSubview(showPasswordButton)
+        view.addSubview(clearPasswordButton)
         view.addSubview(loginButton)
         view.addSubview(findID)
         view.addSubview(findPW)
@@ -43,6 +45,18 @@ class LoginViewController: UIViewController {
             $0.width.equalTo(335)
             $0.height.equalTo(52)
             $0.top.equalTo(idTextField.snp.top).offset(63)
+        }
+        showPasswordButton.snp.makeConstraints{
+            $0.width.equalTo(20)
+            $0.height.equalTo(20)
+            $0.centerY.equalTo(pwTextField.snp.centerY)
+            $0.trailing.equalTo(pwTextField.snp.trailing).inset(20)
+        }
+        clearPasswordButton.snp.makeConstraints{
+            $0.width.equalTo(20)
+            $0.height.equalTo(20)
+            $0.centerY.equalTo(pwTextField.snp.centerY)
+            $0.trailing.equalTo(showPasswordButton.snp.trailing).inset(36)
         }
         loginButton.snp.makeConstraints{
             $0.centerX.equalToSuperview()
@@ -74,7 +88,6 @@ class LoginViewController: UIViewController {
             $0.top.equalTo(findID.snp.top).offset(50)
             $0.leading.equalTo(noAccount.snp.leading).offset(146)
         }
-        pwTextField.rightView = showPasswordButton
     }
     
     private let titleLabel: UILabel = {
@@ -88,25 +101,38 @@ class LoginViewController: UIViewController {
     private let idTextField: UITextField = {
         let textField = UITextField()
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: "Arial", size: 14.0)!,
-            .foregroundColor: UIColor(named: "gray2") ?? .systemGray // Example font color
+            .font: UIFont(name: "Pretendard-SemiBold", size: 15)!,
+            .foregroundColor: UIColor(named: "gray2") ?? .systemGray
         ]
         textField.attributedPlaceholder = NSAttributedString(string: "아이디", attributes: attributes)
         textField.backgroundColor = UIColor(named: "gray4")
         textField.clearButtonMode = .always
         textField.layer.cornerRadius = 3
+        textField.addLeftPadding(padding: 17)
         /*
         textField.layer.borderColor = CGColor(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
         UIColor(red: 1, green: 227/255, blue: 227/255, alpha: 1)
         textField.layer.borderWidth = 1
          */
+        
         return textField
     }()
     
+    private let clearPasswordButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "x-in-circle")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .normal)
+        button.addTarget(self, action: #selector(clearPasswordButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func clearPasswordButtonTapped(){
+        pwTextField.text = ""
+    }
+    
     private let showPasswordButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "eye"), for: .normal)
-        button.setImage(UIImage(systemName: "eye.slash"), for: .selected)
+        button.setImage(UIImage(named: "eye")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .normal)
+        button.setImage(UIImage(named: "eye-slash")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .selected)
         button.addTarget(self, action: #selector(showPasswordButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -119,15 +145,15 @@ class LoginViewController: UIViewController {
     private let pwTextField: UITextField = {
         let textField = UITextField()
         let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: "Arial", size: 14.0)!,
-            .foregroundColor: UIColor(named: "gray2") ?? .systemGray // Example font color
+            .font: UIFont(name: "Pretendard-SemiBold", size: 15)!,
+            .foregroundColor: UIColor(named: "gray2") ?? .systemGray
         ]
         textField.attributedPlaceholder = NSAttributedString(string: "비밀번호", attributes: attributes)
         textField.backgroundColor = UIColor(named: "gray4")
-        textField.clearButtonMode = .always
         textField.isSecureTextEntry = true
         textField.rightViewMode = .always
         textField.layer.cornerRadius = 3
+        textField.addLeftPadding(padding: 17)
         return textField
     }()
     
@@ -135,8 +161,8 @@ class LoginViewController: UIViewController {
         let button = UIButton()
         button.setTitle("로그인하기", for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        button.setTitleColor(UIColor(named: "TextGray"), for: .normal)
-        button.backgroundColor = UIColor(red: 1, green: 20/255, blue: 60/255, alpha: 1)
+        button.setTitleColor(UIColor(named: "gray1"), for: .normal)
+        button.backgroundColor = UIColor(named: "BrandColor")
         return button
     }()
     
@@ -179,6 +205,7 @@ class LoginViewController: UIViewController {
     
     @objc func nicknameButtonTapped(){
         let vc = NicknameViewController()
+        setSheetLayout(for: vc)
         present(vc, animated: true, completion: nil)
     }
     

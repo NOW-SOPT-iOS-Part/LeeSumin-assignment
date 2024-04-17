@@ -9,10 +9,9 @@ import UIKit
 import SnapKit
 
 class NicknameViewController: UIViewController, UITextFieldDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.frame = CGRect(x: 0, y: UIScreen.main.bounds.height * 0.5, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.5)
         
         setupLayout()
         nicknameTextField.delegate = self
@@ -26,21 +25,24 @@ class NicknameViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(finishButton)
         
         titleLabel.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(-292)
-            $0.left.equalToSuperview().offset(-921)
+            $0.top.equalToSuperview().offset(50)
+            //$0.left.equalToSuperview().offset(20)
+            $0.left.equalTo(nicknameTextField)
             $0.width.equalTo(200)
             $0.height.equalTo(27)
         }
         nicknameTextField.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(-244)
-            $0.left.equalTo(titleLabel.snp.left)
+            $0.top.equalToSuperview().offset(98)
+            //$0.left.equalTo(titleLabel.snp.left)
+            $0.centerX.equalToSuperview()
             $0.width.equalTo(335)
             $0.height.equalTo(52)
         }
         finishButton.snp.makeConstraints{
-            $0.top.equalToSuperview().offset(-244)
-            $0.left.equalTo(titleLabel.snp.left)
-            $0.width.equalTo(332.34)
+            $0.top.equalToSuperview().offset(320)
+            //$0.left.equalTo(titleLabel.snp.left)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(335)
             $0.height.equalTo(52)
         }
         
@@ -56,37 +58,35 @@ class NicknameViewController: UIViewController, UITextFieldDelegate {
     
     private let nicknameTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "닉네임"
-        textField.backgroundColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1)
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: "Pretendard-SemiBold", size: 14)!,
+            .foregroundColor: UIColor(named: "gray4") ?? .systemGray
+        ]
+        textField.attributedPlaceholder = NSAttributedString(string: "닉네임", attributes: attributes)
+        textField.backgroundColor = UIColor(named: "gray2")
         textField.clearButtonMode = .always
+        textField.addLeftPadding(padding: 24.64)
         return textField
     }()
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let newText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? string
-        let regex = "^[가-힣]{1, 10}*$"
-        let isValid = newText.range(of: regex, options: .regularExpression) != nil
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        let text = textField.text ?? ""
+        let isValid = text.range(of: "^[가-힣]{1,10}$", options: .regularExpression) != nil
         finishButton.isEnabled = isValid
-        return true
     }
+
     
     private let finishButton: UIButton = {
         let button = UIButton()
+        button.setTitle("저장하기", for: .normal)
         button.addTarget(self, action: #selector(finishButtonTapped), for: .touchUpInside)
         button.isEnabled = false
-        button.backgroundColor = UIColor(red: 1, green: 20/255, blue: 60/255, alpha: 1)
+        button.backgroundColor = UIColor(named: "BrandColor")
+        button.layer.cornerRadius = 12
         return button
     }()
     
-    /*
-    func configureFinishButton() {
-        if nicknameTextField.text?.isEmpty ?? true {
-            finishButton.isEnabled = false
-        } else {
-            finishButton.isEnabled = true
-        }
-    }
-     */
     
     @objc func finishButtonTapped(){
         LoginViewController().nickname = nicknameTextField.text
