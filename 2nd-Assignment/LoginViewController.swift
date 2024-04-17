@@ -162,15 +162,22 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         let button = UIButton()
         button.setTitle("로그인하기", for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        button.setTitleColor(UIColor(named: "gray1"), for: .normal)
-        button.backgroundColor = UIColor(named: "BrandColor")
+        button.isEnabled = false
+        button.setTitleColor(UIColor(named: "gray1"), for: .disabled)
+        
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(named: "gray4")?.cgColor
+        button.backgroundColor = .black
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
     
-    private func changeLoginButtonColor(){
-        loginButton.backgroundColor = .red
-    }
+    private func updateLoginButton() {
+        let isEnabled = !(idTextField.text?.isEmpty ?? true) && !(pwTextField.text?.isEmpty ?? true)
+        loginButton.isEnabled = isEnabled
+        loginButton.backgroundColor = isEnabled ? UIColor(named: "BrandColor") : .black
+        loginButton.layer.borderWidth = isEnabled ? 0 : 1
+    } //if문에서 단순화한 코드
     
     @objc func loginButtonTapped(){
         let vc = WelcomeViewController()
@@ -233,5 +240,8 @@ extension LoginViewController: UITextFieldDelegate{
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 0
+    }
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        updateLoginButton()
     }
 }
