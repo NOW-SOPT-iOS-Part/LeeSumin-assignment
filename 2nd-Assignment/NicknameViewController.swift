@@ -75,13 +75,11 @@ class NicknameViewController: UIViewController, UITextFieldDelegate{
         return textField
     }()
     
-    
     func textFieldDidChangeSelection(_ textField: UITextField) {
         let text = textField.text ?? ""
         let isValid = text.range(of: "^[가-힣]{1,10}$", options: .regularExpression) != nil
         finishButton.isEnabled = isValid
     }
-
     
     private let finishButton: UIButton = {
         let button = UIButton()
