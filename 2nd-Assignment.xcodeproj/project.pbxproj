@@ -22,6 +22,7 @@
 		74D5B6532BCFB1100011FDBA /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */; };
 		74D5B6552BCFF4770011FDBA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */; };
 		74D5B6572BCFF7FC0011FDBA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 74D5B6562BCFF7FC0011FDBA /* Pretendard-Bold.otf */; };
+		74D5B6592BD03D260011FDBA /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 74D5B6582BD03D260011FDBA /* Pretendard-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		74D5B6562BCFF7FC0011FDBA /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		74D5B6582BD03D260011FDBA /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				74D5B6562BCFF7FC0011FDBA /* Pretendard-Bold.otf */,
+				74D5B6582BD03D260011FDBA /* Pretendard-Medium.otf */,
 				7437D6D12BCA6EFD00A5BE9F /* Pretendard-Regular.otf */,
 				747EC3292BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf */,
 			);
@@ -165,6 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74D5B6592BD03D260011FDBA /* Pretendard-Medium.otf in Resources */,
 				7437D6BF2BCA48B000A5BE9F /* Assets.xcassets in Resources */,
 				74D5B6572BCFF7FC0011FDBA /* Pretendard-Bold.otf in Resources */,
 				7437D6C22BCA48B000A5BE9F /* Base in Resources */,
