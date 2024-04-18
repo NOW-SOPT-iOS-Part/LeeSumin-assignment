@@ -26,6 +26,7 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
     private func setupLayout(){
         view.addSubview(titleLabel)
         view.addSubview(idTextField)
+        view.addSubview(clearIdButton)
         view.addSubview(pwTextField)
         view.addSubview(showPasswordButton)
         view.addSubview(clearPasswordButton)
@@ -45,6 +46,12 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
             $0.width.equalTo(335)
             $0.height.equalTo(52)
             $0.top.equalTo(titleLabel.snp.top).offset(64)
+        }
+        clearIdButton.snp.makeConstraints{
+            $0.width.equalTo(20)
+            $0.height.equalTo(20)
+            $0.centerY.equalTo(idTextField.snp.centerY)
+            $0.trailing.equalTo(idTextField.snp.trailing).inset(20)
         }
         pwTextField.snp.makeConstraints{
             $0.centerX.equalToSuperview()
@@ -104,6 +111,19 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         return label
     }()
     
+    private let clearIdButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "x-in-circle")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .normal)
+        button.addTarget(self, action: #selector(clearIdButtonTapped), for: .touchUpInside)
+        button.isHidden = true
+        button.isEnabled = false
+        return button
+    }()
+    
+    @objc func clearIdButtonTapped(){
+        idTextField.text = ""
+    }
+    
     private let idTextField: UITextField = {
         let textField = UITextField()
         let attributes: [NSAttributedString.Key: Any] = [
@@ -112,17 +132,19 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         ]
         textField.attributedPlaceholder = NSAttributedString(string: "아이디", attributes: attributes)
         textField.backgroundColor = UIColor(named: "gray4")
-        textField.clearButtonMode = .always
         textField.layer.cornerRadius = 3
         textField.textColor = UIColor(named: "gray2")
         textField.addLeftPadding(padding: 17)
         return textField
     }()
     
+    
     private let clearPasswordButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "x-in-circle")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .normal)
         button.addTarget(self, action: #selector(clearPasswordButtonTapped), for: .touchUpInside)
+        button.isHidden = true
+        button.isEnabled = false
         return button
     }()
     
@@ -135,6 +157,8 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         button.setImage(UIImage(named: "eye")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .normal)
         button.setImage(UIImage(named: "eye-slash")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .selected)
         button.addTarget(self, action: #selector(showPasswordButtonTapped), for: .touchUpInside)
+        button.isHidden = true
+        button.isEnabled = false
         return button
     }()
     
@@ -239,10 +263,32 @@ extension LoginViewController: UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.layer.borderColor = UIColor(named: "gray2")?.cgColor
         textField.layer.borderWidth = 1
+        if textField == idTextField{
+            clearIdButton.isHidden = false
+            clearIdButton.isEnabled = true
+        }
+        if textField == pwTextField{
+            showPasswordButton.isHidden = false
+            showPasswordButton.isEnabled = true
+            clearPasswordButton.isHidden = false
+            clearPasswordButton.isEnabled = true
+        }
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderWidth = 0
+        if textField == idTextField{
+            clearIdButton.isHidden = true
+            clearIdButton.isEnabled = false
+        }
+        if textField == pwTextField{
+            showPasswordButton.isHidden = true
+            showPasswordButton.isEnabled = false
+            clearPasswordButton.isHidden = true
+            clearPasswordButton.isEnabled = false
+        }
     }
+    
     func textFieldDidChangeSelection(_ textField: UITextField) {
         updateLoginButton()
     }
