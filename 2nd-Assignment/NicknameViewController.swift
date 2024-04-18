@@ -79,14 +79,21 @@ class NicknameViewController: UIViewController, UITextFieldDelegate{
         let text = textField.text ?? ""
         let isValid = text.range(of: "^[가-힣]{1,10}$", options: .regularExpression) != nil
         finishButton.isEnabled = isValid
+        finishButton.backgroundColor = isValid ? UIColor(named: "BrandColor") : .white
+        finishButton.layer.borderWidth = isValid ? 0 : 1
+        
     }
     
     private let finishButton: UIButton = {
         let button = UIButton()
         button.setTitle("저장하기", for: .normal)
-        button.addTarget(self, action: #selector(finishButtonTapped), for: .touchUpInside)
         button.isEnabled = false
-        button.backgroundColor = UIColor(named: "BrandColor")
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.black, for: .disabled)
+        button.addTarget(self, action: #selector(finishButtonTapped), for: .touchUpInside)
+        button.backgroundColor = .white
+        button.layer.borderColor = UIColor(named: "gray4")?.cgColor
+        button.layer.borderWidth = 1
         button.layer.cornerRadius = 12
         return button
     }()
@@ -95,6 +102,7 @@ class NicknameViewController: UIViewController, UITextFieldDelegate{
         delegate?.didEnterNickname(nicknameTextField.text)
         self.dismiss(animated: true)
     }
+    
 
 }
 
