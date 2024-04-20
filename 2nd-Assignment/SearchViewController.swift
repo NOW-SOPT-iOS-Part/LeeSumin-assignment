@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  SearchViewController.swift
 //  2nd-Assignment
 //
 //  Created by 이수민 on 4/20/24.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
+
         // Do any additional setup after loading the view.
     }
     
