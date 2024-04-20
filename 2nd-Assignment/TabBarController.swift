@@ -7,23 +7,29 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.hidesBackButton = true
+        setVC()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private let homeViewController = UINavigationController(rootViewController: HomeViewController())
+    
+    private func setVC(){
+        self.setViewControllers([homeViewController], animated: true)
+        
+        if let items = self.tabBar.items{
+            items[0].title = "홈"
+            items[0].image = UIImage(systemName: "house")
+            items[0].selectedImage = UIImage(systemName: "house.fill")
+        }
+        
     }
-    */
+    
+   
+    
 
 }

@@ -67,7 +67,7 @@ class WelcomeViewController: UIViewController {
     }()
 
     @objc private func mainButtonTapped(){
-        let vc = MainViewController()
+        let vc = TabBarController()
         navigationController?.pushViewController(vc, animated: true)
     }
 

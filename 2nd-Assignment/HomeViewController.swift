@@ -7,11 +7,10 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }
     
@@ -21,8 +20,5 @@ class MainViewController: UIViewController {
         return view
     }()
     
-    private let homeView : UIView = {
-        let view = UIView()
-        return view
-    }()
+    
 }
