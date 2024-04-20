@@ -62,8 +62,13 @@ class WelcomeViewController: UIViewController {
         button.setTitle("메인으로", for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(mainButtonTapped), for: .touchUpInside)
         return button
     }()
 
+    @objc private func mainButtonTapped(){
+        let vc = MainViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
