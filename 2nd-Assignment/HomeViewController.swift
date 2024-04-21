@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         /// !!!!!!!! 왜????? scrollView 안에 넣으려 했는데 scrollview 안에 posterView를 넣으면 posterview cell 자체가 initialize이 안 됨
         /// 안 됐었는데..?
         
-        [posterView, titleView, headerView, seriesHeaderView, seriesCollectionView].forEach{
+        [posterView, titleView, headerView, posterCircleView, seriesHeaderView, seriesCollectionView].forEach{
             self.view.addSubview($0)
         }
         
@@ -47,6 +47,12 @@ class HomeViewController: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(18)
             $0.top.equalTo(titleView.snp.bottom).offset(4)
             $0.height.equalTo(37)
+        }
+        posterCircleView.snp.makeConstraints{
+            $0.top.equalTo(posterView.snp.bottom).offset(22)
+            $0.leading.equalToSuperview().offset(21)
+            $0.width.equalTo(60)
+            $0.height.equalTo(4)
         }
         posterView.snp.makeConstraints{
             $0.top.equalToSuperview().inset(view.safeAreaInsets.top)
@@ -104,7 +110,7 @@ class HomeViewController: UIViewController {
     
     
     private lazy var headerView : UIStackView  = HeaderView()
-    
+    private lazy var posterCircleView : UIStackView  = PosterCircleView()
     private lazy var posterView : UICollectionView  = PosterCollectionView()
     
     private lazy var seriesHeaderView : UIView = SeriesCollectionHeaderView()

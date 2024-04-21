@@ -8,7 +8,7 @@
 import UIKit
 
 class PosterCollectionView: UICollectionView{
-
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
@@ -40,7 +40,10 @@ class PosterCollectionView: UICollectionView{
        didSet {
            self.reloadData()
        }
-   }
+   } //didSet??
+    
+    private var posterCircleView = PosterCircleView()
+    //이 view를 재로딩해서 다시 그려야 하는데 그게 맞나?! 방법을 생각해야 됨
 }
 
 extension PosterCollectionView : UICollectionViewDelegateFlowLayout {
@@ -67,6 +70,7 @@ extension PosterCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PosterCollectionViewCell.identifier, for: indexPath) as? PosterCollectionViewCell else {return UICollectionViewCell()}
         cell.dataBind(posterData[indexPath.item], indexPath.item)
+        posterCircleView.selectCircle(indexPath.item+1)
         return cell
     }
     
