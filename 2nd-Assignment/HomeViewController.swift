@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.accessibilityScroll(.down)
         setTitleViewLayout()
         setupLayout()
         // Do any additional setup after loading the view.
@@ -33,10 +34,9 @@ class HomeViewController: UIViewController {
          */
         /// !!!!!!!! 왜????? scrollView 안에 넣으려 했는데 scrollview 안에 posterView를 넣으면 posterview cell 자체가 initialize이 안 됨
         
-        [posterView, titleView, headerView, seriesView].forEach{
+        [posterView, titleView, headerView, seriesHeaderView, seriesCollectionView].forEach{
             self.view.addSubview($0)
         }
-        
         
         titleView.snp.makeConstraints{
             $0.top.leading.trailing.equalToSuperview()
@@ -52,9 +52,16 @@ class HomeViewController: UIViewController {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(UIScreen.main.bounds.width*1.425)
         }
-        seriesView.snp.makeConstraints{
+        seriesHeaderView.snp.makeConstraints{
             $0.leading.trailing.equalToSuperview()
-            $0.top.equalTo(posterView.snp.bottom)
+            $0.top.equalTo(posterView.snp.bottom).offset(49)
+            $0.height.equalTo(23)
+        }
+        seriesCollectionView.snp.makeConstraints{
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(seriesHeaderView.snp.bottom).offset(14)
+            
+            $0.height.equalTo(146)
         }
     }
     
@@ -102,10 +109,8 @@ class HomeViewController: UIViewController {
     
     private lazy var posterView : UICollectionView  = PosterCollectionView()
     
-    private lazy var seriesView : UICollectionView = {
-        let collecitonView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        return collecitonView
-    }()
+    private lazy var seriesHeaderView : UIView = SeriesCollectionHeaderView()
+    private lazy var seriesCollectionView : UICollectionView = SeriesCollectionView()
 
 }
 
