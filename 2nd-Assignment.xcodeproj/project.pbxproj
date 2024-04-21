@@ -25,6 +25,7 @@
 		743C8DD12BD504200032B31C /* SeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DD02BD504200032B31C /* SeriesCollectionViewCell.swift */; };
 		743C8DD52BD506120032B31C /* SeriesCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DD42BD506120032B31C /* SeriesCollectionHeaderView.swift */; };
 		743C8DD72BD539100032B31C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DD62BD539100032B31C /* UIImage+Extensions.swift */; };
+		743C8DD92BD53CA90032B31C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DD82BD53CA90032B31C /* HeaderView.swift */; };
 		7461A6182BCF935B005CF27B /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7437D6D12BCA6EFD00A5BE9F /* Pretendard-Regular.otf */; };
 		747EC32A2BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 747EC3292BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf */; };
 		74D5B64F2BCFA0660011FDBA /* SheetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5B64E2BCFA0660011FDBA /* SheetLayout.swift */; };
@@ -54,6 +55,7 @@
 		743C8DD02BD504200032B31C /* SeriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		743C8DD42BD506120032B31C /* SeriesCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCollectionHeaderView.swift; sourceTree = "<group>"; };
 		743C8DD62BD539100032B31C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		743C8DD82BD53CA90032B31C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		747EC3292BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "../../../../../Downloads/Pretendard-1/public/static/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		74D5B64E2BCFA0660011FDBA /* SheetLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetLayout.swift; sourceTree = "<group>"; };
 		74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				74D5B64E2BCFA0660011FDBA /* SheetLayout.swift */,
 				74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */,
 				743C8DBE2BD402AB0032B31C /* HomeViewController.swift */,
+				743C8DD82BD53CA90032B31C /* HeaderView.swift */,
 				743C8DCF2BD503630032B31C /* SeriesCollectionView */,
 				743C8DC62BD423540032B31C /* PosterCollectionView */,
 				7437D6BB2BCA48AF00A5BE9F /* Main.storyboard */,
@@ -234,6 +237,7 @@
 				74D5B64F2BCFA0660011FDBA /* SheetLayout.swift in Sources */,
 				743C8DD52BD506120032B31C /* SeriesCollectionHeaderView.swift in Sources */,
 				7437D6BA2BCA48AF00A5BE9F /* LoginViewController.swift in Sources */,
+				743C8DD92BD53CA90032B31C /* HeaderView.swift in Sources */,
 				74D5B6532BCFB1100011FDBA /* UITextField+Extensions.swift in Sources */,
 				7437D6B62BCA48AF00A5BE9F /* AppDelegate.swift in Sources */,
 				743C8DCE2BD5035D0032B31C /* SeriesCollectionView.swift in Sources */,

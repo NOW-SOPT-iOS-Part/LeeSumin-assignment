@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
             $0.height.equalTo(94)
         }
         headerView.snp.makeConstraints{
-            $0.leading.trailing.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(18)
             $0.top.equalTo(titleView.snp.bottom).offset(4)
             $0.height.equalTo(37)
         }
@@ -102,11 +102,8 @@ class HomeViewController: UIViewController {
         return view
     }() //addSubView : private let (x) /  private lazy var (o)
     
-    private lazy var headerView : UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemRed
-        return view
-    }() //홈 시리즈 .. -> 일단 냅둬
+    
+    private lazy var headerView : UIStackView  = HeaderView()
     
     private lazy var posterView : UICollectionView  = PosterCollectionView()
     
