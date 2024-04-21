@@ -33,6 +33,7 @@ final class SeriesCollectionViewCell: UICollectionViewCell {
     private let seriesImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 3
+        imageView.clipsToBounds = true
         return imageView
     }()
     

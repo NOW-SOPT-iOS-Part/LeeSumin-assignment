@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
         }
          */
         /// !!!!!!!! 왜????? scrollView 안에 넣으려 했는데 scrollview 안에 posterView를 넣으면 posterview cell 자체가 initialize이 안 됨
+        /// 안 됐었는데..?
         
         [posterView, titleView, headerView, seriesHeaderView, seriesCollectionView].forEach{
             self.view.addSubview($0)

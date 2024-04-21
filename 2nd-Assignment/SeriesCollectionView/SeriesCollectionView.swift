@@ -14,6 +14,7 @@ class SeriesCollectionView: UICollectionView{
         flowLayout.scrollDirection = .horizontal
         flowLayout.sectionHeadersPinToVisibleBounds = true //헤더 collectionView 위에 고정
         super.init(frame: frame, collectionViewLayout: flowLayout)
+        self.backgroundColor = .black
         register()
         setDelegate()
     }

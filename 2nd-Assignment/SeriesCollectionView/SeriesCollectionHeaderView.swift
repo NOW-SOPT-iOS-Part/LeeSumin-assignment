@@ -43,7 +43,7 @@ class SeriesCollectionHeaderView: UICollectionReusableView { //UICollectionReusa
         container.font = UIFont(name: "Pretendard-Medium", size: 11)
         container.foregroundColor = UIColor(named: "gray2.5") //textcolor
         configuration.attributedTitle = AttributedString("전체보기", attributes: container)
-        configuration.image = UIImage(named: "chevron_right")
+        configuration.image = UIImage(named: "chevron_right")?.resized(to: CGSize(width: 10, height: 10))
         configuration.imagePlacement = .trailing
     }
     
