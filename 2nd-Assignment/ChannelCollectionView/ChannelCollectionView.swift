@@ -1,18 +1,18 @@
 //
-//  SeriesCollectionView.swift
+//  ChannelCollectionView.swift
 //  2nd-Assignment
 //
-//  Created by 이수민 on 4/21/24.
+//  Created by 이수민 on 4/28/24.
 //
 
 import UIKit
 
-class SeriesCollectionView: UICollectionView{
+class ChannelCollectionView: UICollectionView{
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.sectionHeadersPinToVisibleBounds = true //헤더 collectionView 위에 고정
+        flowLayout.sectionHeadersPinToVisibleBounds = true 
         super.init(frame: frame, collectionViewLayout: flowLayout)
         self.backgroundColor = .black
         register()
@@ -25,8 +25,8 @@ class SeriesCollectionView: UICollectionView{
     
     private func register(){
         self.register(
-            SeriesCollectionViewCell.self,
-            forCellWithReuseIdentifier: SeriesCollectionViewCell.identifier
+            ChannelCollectionViewCell.self,
+            forCellWithReuseIdentifier: ChannelCollectionViewCell.identifier
         )
         self.register(
             SeriesCollectionHeaderView.self,
@@ -42,20 +42,20 @@ class SeriesCollectionView: UICollectionView{
         self.dataSource = self
     }
     
-    private var seriesData = PosterModel.posterDummy() {
+    private var channelData = ChannelModel.channelDummy() {
        didSet {
            self.reloadData()
        }
    }
 }
 
-extension SeriesCollectionView : UICollectionViewDelegateFlowLayout {
+extension ChannelCollectionView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 98, height: 166)
+        return CGSize(width: 166, height: 138)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 12
+        return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -63,18 +63,18 @@ extension SeriesCollectionView : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0)
     }
 }
 
-extension SeriesCollectionView: UICollectionViewDataSource {
+extension ChannelCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SeriesCollectionViewCell.identifier, for: indexPath) as? SeriesCollectionViewCell else {return UICollectionViewCell()}
-        cell.dataBind(seriesData[indexPath.item], indexPath.item)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChannelCollectionViewCell.identifier, for: indexPath) as? ChannelCollectionViewCell else {return UICollectionViewCell()}
+        cell.dataBind(channelData[indexPath.item], indexPath.item)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return seriesData.count
+        return channelData.count
     }
 }

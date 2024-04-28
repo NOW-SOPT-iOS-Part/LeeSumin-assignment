@@ -11,6 +11,10 @@ class SeriesCollectionHeaderView: UICollectionReusableView { //UICollectionReusa
 
     static let identifier = "SeriesCollectionHeaderView"
     
+    func configure(withTitle title: String) {
+        titleLabel.text = title
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         showAllButtonConfiguration()
@@ -29,7 +33,6 @@ class SeriesCollectionHeaderView: UICollectionReusableView { //UICollectionReusa
     
     private lazy var titleLabel: UILabel = {
         var label = UILabel()
-        label.text = "티빙에서 꼭 봐야하는 컨텐츠"
         label.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         label.textColor = .white
         return label

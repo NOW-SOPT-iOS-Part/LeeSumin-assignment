@@ -11,6 +11,7 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
         navigationItem.hidesBackButton = true
         setVC()
         // Do any additional setup after loading the view.

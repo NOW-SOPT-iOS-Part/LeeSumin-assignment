@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
         /// 안 됐었는데..? 
         /// 레이아웃이 이상해짐
         
-        [posterView, titleView, headerView, posterCircleView, seriesHeaderView, seriesCollectionView].forEach{
+        [posterView, titleView, headerView, posterCircleView, tvingEssentialHeaderView, tvingEssentialCollectionView, topChannelHeaderView, topChannelCollectionView, paramountContentHeaderView, paramountContentCollectionView ].forEach{
             scrollView.addSubview($0)
         }
         
@@ -66,17 +66,41 @@ class HomeViewController: UIViewController {
             $0.width.equalTo(UIScreen.main.bounds.width)
             $0.height.equalTo(UIScreen.main.bounds.width*1.425)
         }
-        seriesHeaderView.snp.makeConstraints{
+        
+        tvingEssentialHeaderView.snp.makeConstraints{
             $0.width.equalTo(UIScreen.main.bounds.width)
             $0.top.equalTo(posterView.snp.bottom).offset(49)
             $0.height.equalTo(23)
         }
-        seriesCollectionView.snp.makeConstraints{
+        tvingEssentialCollectionView.snp.makeConstraints{
             $0.width.equalTo(UIScreen.main.bounds.width)
-            $0.top.equalTo(seriesHeaderView.snp.bottom).offset(14)
-            $0.height.equalTo(146)
-            $0.bottom.equalTo(scrollView.snp.bottom)
+            $0.top.equalTo(tvingEssentialHeaderView.snp.bottom).offset(14)
+            $0.height.equalTo(166)
         }
+        
+        topChannelHeaderView.snp.makeConstraints{
+            $0.width.equalTo(UIScreen.main.bounds.width)
+            $0.top.equalTo(tvingEssentialCollectionView.snp.bottom).offset(49)
+            $0.height.equalTo(23)
+        }
+        topChannelCollectionView.snp.makeConstraints{
+            $0.width.equalTo(UIScreen.main.bounds.width)
+            $0.top.equalTo(topChannelHeaderView.snp.top).offset(31)
+            $0.height.equalTo(138)
+        }
+        
+        paramountContentHeaderView.snp.makeConstraints{
+            $0.width.equalTo(UIScreen.main.bounds.width)
+            $0.top.equalTo(topChannelCollectionView.snp.top).offset(156)
+            $0.height.equalTo(23)
+        }
+        paramountContentCollectionView.snp.makeConstraints{
+            $0.width.equalTo(UIScreen.main.bounds.width)
+            $0.top.equalTo(paramountContentHeaderView.snp.top).offset(36)
+            $0.height.equalTo(166)
+            $0.bottom.equalToSuperview()
+        }
+        
     }
     
     private lazy var titleImageView : UIView = {
@@ -120,8 +144,27 @@ class HomeViewController: UIViewController {
     private lazy var posterCircleView : UIStackView  = PosterCircleView()
     private lazy var posterView : UICollectionView  = PosterCollectionView()
     
-    private lazy var seriesHeaderView : UIView = SeriesCollectionHeaderView()
-    private lazy var seriesCollectionView : UICollectionView = SeriesCollectionView()
+    private lazy var tvingEssentialHeaderView : UIView = {
+        let headerView = SeriesCollectionHeaderView()
+        headerView.configure(withTitle: "티빙에서 꼭 봐야하는 콘텐츠")
+        return headerView
+    }()
+    private lazy var tvingEssentialCollectionView : UICollectionView = SeriesCollectionView()
+    
+    private lazy var topChannelHeaderView: UIView = {
+        let headerView = SeriesCollectionHeaderView()
+        headerView.configure(withTitle: "인기 LIVE 채널")
+        return headerView
+    }()
+    private lazy var topChannelCollectionView : UICollectionView = ChannelCollectionView()
+
+    
+    private lazy var paramountContentHeaderView: UIView = {
+        let headerView = SeriesCollectionHeaderView()
+        headerView.configure(withTitle: "1화 무료! 파라마운트+ 인기 시리즈")
+        return headerView
+    }()
+    private lazy var paramountContentCollectionView : UICollectionView = SeriesCollectionView()
 
 }
 

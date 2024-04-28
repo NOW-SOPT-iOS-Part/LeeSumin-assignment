@@ -29,6 +29,9 @@
 		743C8DDB2BD53F550032B31C /* PosterCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DDA2BD53F550032B31C /* PosterCircleView.swift */; };
 		7461A6182BCF935B005CF27B /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7437D6D12BCA6EFD00A5BE9F /* Pretendard-Regular.otf */; };
 		747EC32A2BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 747EC3292BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf */; };
+		74D0B5CB2BDE49E10056A739 /* ChannelCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0B5CA2BDE49E10056A739 /* ChannelCollectionView.swift */; };
+		74D0B5CD2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0B5CC2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift */; };
+		74D0B5CF2BDE4BC70056A739 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0B5CE2BDE4BC70056A739 /* ChannelModel.swift */; };
 		74D5B64F2BCFA0660011FDBA /* SheetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5B64E2BCFA0660011FDBA /* SheetLayout.swift */; };
 		74D5B6532BCFB1100011FDBA /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */; };
 		74D5B6552BCFF4770011FDBA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */; };
@@ -59,6 +62,9 @@
 		743C8DD82BD53CA90032B31C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		743C8DDA2BD53F550032B31C /* PosterCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCircleView.swift; sourceTree = "<group>"; };
 		747EC3292BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "../../../../../Downloads/Pretendard-1/public/static/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		74D0B5CA2BDE49E10056A739 /* ChannelCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionView.swift; sourceTree = "<group>"; };
+		74D0B5CC2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewCell.swift; sourceTree = "<group>"; };
+		74D0B5CE2BDE4BC70056A739 /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		74D5B64E2BCFA0660011FDBA /* SheetLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetLayout.swift; sourceTree = "<group>"; };
 		74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 				74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */,
 				743C8DBE2BD402AB0032B31C /* HomeViewController.swift */,
 				743C8DD82BD53CA90032B31C /* HeaderView.swift */,
+				74D0B5C92BDE488E0056A739 /* ChannelCollectionView */,
 				743C8DCF2BD503630032B31C /* SeriesCollectionView */,
 				743C8DC62BD423540032B31C /* PosterCollectionView */,
 				7437D6BB2BCA48AF00A5BE9F /* Main.storyboard */,
@@ -150,6 +157,16 @@
 				743C8DD42BD506120032B31C /* SeriesCollectionHeaderView.swift */,
 			);
 			path = SeriesCollectionView;
+			sourceTree = "<group>";
+		};
+		74D0B5C92BDE488E0056A739 /* ChannelCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				74D0B5CA2BDE49E10056A739 /* ChannelCollectionView.swift */,
+				74D0B5CC2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift */,
+				74D0B5CE2BDE4BC70056A739 /* ChannelModel.swift */,
+			);
+			path = ChannelCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,10 +260,13 @@
 				743C8DD92BD53CA90032B31C /* HeaderView.swift in Sources */,
 				74D5B6532BCFB1100011FDBA /* UITextField+Extensions.swift in Sources */,
 				7437D6B62BCA48AF00A5BE9F /* AppDelegate.swift in Sources */,
+				74D0B5CB2BDE49E10056A739 /* ChannelCollectionView.swift in Sources */,
 				743C8DCE2BD5035D0032B31C /* SeriesCollectionView.swift in Sources */,
 				7437D6B82BCA48AF00A5BE9F /* SceneDelegate.swift in Sources */,
 				74D5B6552BCFF4770011FDBA /* WelcomeViewController.swift in Sources */,
+				74D0B5CF2BDE4BC70056A739 /* ChannelModel.swift in Sources */,
 				743C8DCA2BD423870032B31C /* PosterCollectionViewCell.swift in Sources */,
+				74D0B5CD2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift in Sources */,
 				743C8DC52BD40F570032B31C /* TabBarController.swift in Sources */,
 				743C8DBF2BD402AB0032B31C /* HomeViewController.swift in Sources */,
 				743C8DDB2BD53F550032B31C /* PosterCircleView.swift in Sources */,
