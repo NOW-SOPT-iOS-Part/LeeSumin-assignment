@@ -60,8 +60,7 @@ extension PosterCollectionView : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: -safeAreaInsets.top, left: 0, bottom: 0, right: 0)
-        // - safeAreaInsets.top 추가해줘야 위쪽 safeArea 커버
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
 }

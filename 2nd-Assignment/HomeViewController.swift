@@ -9,42 +9,48 @@ import UIKit
 import SnapKit
 
 class HomeViewController: UIViewController {
-
+    var topInset : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.accessibilityScroll(.down)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        let navigationBarHeight = navigationController?.navigationBar.frame.height ?? 0.0
+        topInset = Int(navigationBarHeight + UIApplication.shared.statusBarFrame.height) //포인트!!!!!!
+        
         setTitleViewLayout()
         setupLayout()
         // Do any additional setup after loading the view.
     }
     
-    /*
-    private let contentView : UIScrollView = {
+    private let scrollView : UIScrollView = {
         let scrollView = UIScrollView()
+        scrollView.backgroundColor = .black
+        scrollView.isDirectionalLockEnabled = true
         return scrollView
     }()
-     */
     
     private func setupLayout(){
-        /*
-        view.addSubview(contentView)
-        contentView.snp.makeConstraints{
-            $0.top.bottom.leading.trailing.equalToSuperview()
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
         }
-         */
         /// !!!!!!!! 왜????? scrollView 안에 넣으려 했는데 scrollview 안에 posterView를 넣으면 posterview cell 자체가 initialize이 안 됨
-        /// 안 됐었는데..?
+        /// 안 됐었는데..? 
+        /// 레이아웃이 이상해짐
         
         [posterView, titleView, headerView, posterCircleView, seriesHeaderView, seriesCollectionView].forEach{
-            self.view.addSubview($0)
+            scrollView.addSubview($0)
         }
         
         titleView.snp.makeConstraints{
-            $0.top.leading.trailing.equalToSuperview()
+            $0.top.equalTo(posterView.snp.top)
+            $0.leading.trailing.equalToSuperview()
+            $0.width.equalTo(UIScreen.main.bounds.width)
             $0.height.equalTo(94)
         }
         headerView.snp.makeConstraints{
-            $0.leading.trailing.equalToSuperview().inset(18)
+            $0.leading.equalToSuperview().inset(18)
+            $0.width.equalTo(UIScreen.main.bounds.width - 36)
             $0.top.equalTo(titleView.snp.bottom).offset(4)
             $0.height.equalTo(37)
         }
@@ -55,20 +61,21 @@ class HomeViewController: UIViewController {
             $0.height.equalTo(4)
         }
         posterView.snp.makeConstraints{
-            $0.top.equalToSuperview().inset(view.safeAreaInsets.top)
+            $0.top.equalToSuperview().offset(-self.topInset)
             $0.leading.trailing.equalToSuperview()
+            $0.width.equalTo(UIScreen.main.bounds.width)
             $0.height.equalTo(UIScreen.main.bounds.width*1.425)
         }
         seriesHeaderView.snp.makeConstraints{
-            $0.leading.trailing.equalToSuperview()
+            $0.width.equalTo(UIScreen.main.bounds.width)
             $0.top.equalTo(posterView.snp.bottom).offset(49)
             $0.height.equalTo(23)
         }
         seriesCollectionView.snp.makeConstraints{
-            $0.leading.trailing.equalToSuperview()
+            $0.width.equalTo(UIScreen.main.bounds.width)
             $0.top.equalTo(seriesHeaderView.snp.bottom).offset(14)
-            
             $0.height.equalTo(146)
+            $0.bottom.equalTo(scrollView.snp.bottom)
         }
     }
     

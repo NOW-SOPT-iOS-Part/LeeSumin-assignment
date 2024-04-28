@@ -28,8 +28,4 @@ class TabBarController: UITabBarController {
         }
         
     }
-    
-   
-    
-
 }
