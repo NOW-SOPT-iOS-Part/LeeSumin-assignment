@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
         /// 안 됐었는데..? 
         /// 레이아웃이 이상해짐
         
-        [posterView, titleView, headerView, posterCircleView, tvingEssentialHeaderView, tvingEssentialCollectionView, topChannelHeaderView, topChannelCollectionView, paramountContentHeaderView, paramountContentCollectionView, bannerCollectionView ].forEach{
+        [posterView, titleView, headerView, posterCircleView, tvingEssentialHeaderView, tvingEssentialCollectionView, topChannelHeaderView, topChannelCollectionView, paramountContentHeaderView, paramountContentCollectionView, bannerCollectionView, movieHeaderView, movieCollectionView ].forEach{
             scrollView.addSubview($0)
         }
         
@@ -99,10 +99,22 @@ class HomeViewController: UIViewController {
             $0.top.equalTo(paramountContentHeaderView.snp.top).offset(36)
             $0.height.equalTo(166)
         }
+        
         bannerCollectionView.snp.makeConstraints{
             $0.top.equalTo(paramountContentCollectionView.snp.top).offset(215)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(58)
+        }
+        
+        movieHeaderView.snp.makeConstraints{
+            $0.width.equalTo(UIScreen.main.bounds.width)
+            $0.top.equalTo(bannerCollectionView.snp.top).offset(96)
+            $0.height.equalTo(23)
+        }
+        movieCollectionView.snp.makeConstraints{
+            $0.width.equalTo(UIScreen.main.bounds.width)
+            $0.top.equalTo(movieHeaderView.snp.top).offset(36)
+            $0.height.equalTo(166)
             $0.bottom.equalToSuperview()
         }
         
@@ -174,5 +186,11 @@ class HomeViewController: UIViewController {
    
     private lazy var bannerCollectionView : UICollectionView = BannerCollectionView()
 
+    private lazy var movieHeaderView: UIView = {
+        let headerView = SeriesCollectionHeaderView()
+        headerView.configure(withTitle: "마술보다 더 신비로운 영화(신비로운 영화사전님)")
+        return headerView
+    }()
+    private lazy var movieCollectionView : UICollectionView = SeriesCollectionView()
 }
 
