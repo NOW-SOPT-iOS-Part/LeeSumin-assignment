@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
         /// 안 됐었는데..? 
         /// 레이아웃이 이상해짐
         
-        [posterView, titleView, headerView, posterCircleView, tvingEssentialHeaderView, tvingEssentialCollectionView, topChannelHeaderView, topChannelCollectionView, paramountContentHeaderView, paramountContentCollectionView ].forEach{
+        [posterView, titleView, headerView, posterCircleView, tvingEssentialHeaderView, tvingEssentialCollectionView, topChannelHeaderView, topChannelCollectionView, paramountContentHeaderView, paramountContentCollectionView, bannerCollectionView ].forEach{
             scrollView.addSubview($0)
         }
         
@@ -98,6 +98,11 @@ class HomeViewController: UIViewController {
             $0.width.equalTo(UIScreen.main.bounds.width)
             $0.top.equalTo(paramountContentHeaderView.snp.top).offset(36)
             $0.height.equalTo(166)
+        }
+        bannerCollectionView.snp.makeConstraints{
+            $0.top.equalTo(paramountContentCollectionView.snp.top).offset(215)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(58)
             $0.bottom.equalToSuperview()
         }
         
@@ -165,6 +170,9 @@ class HomeViewController: UIViewController {
         return headerView
     }()
     private lazy var paramountContentCollectionView : UICollectionView = SeriesCollectionView()
+    
+   
+    private lazy var bannerCollectionView : UICollectionView = BannerCollectionView()
 
 }
 

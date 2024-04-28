@@ -11,7 +11,7 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        tabBar.barTintColor = .black
         navigationItem.hidesBackButton = true
         setVC()
         // Do any additional setup after loading the view.
@@ -25,7 +25,7 @@ class TabBarController: UITabBarController {
         if let items = self.tabBar.items{
             items[0].title = "홈"
             items[0].image = UIImage(systemName: "house")
-            items[0].selectedImage = UIImage(systemName: "house.fill")
+            items[0].selectedImage = UIImage(systemName: "house.fill")?.withTintColor(.white) //왜 하얀색 안 되지
         }
         
     }
