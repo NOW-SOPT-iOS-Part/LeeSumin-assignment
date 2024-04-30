@@ -112,24 +112,18 @@
 		7437D6B42BCA48AF00A5BE9F /* 2nd-Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				743C8DC42BD40F570032B31C /* TabBarController.swift */,
 				7437D6B52BCA48AF00A5BE9F /* AppDelegate.swift */,
 				7437D6B72BCA48AF00A5BE9F /* SceneDelegate.swift */,
-				7437D6C92BCA574B00A5BE9F /* NicknameViewController.swift */,
-				7437D6B92BCA48AF00A5BE9F /* LoginViewController.swift */,
-				74D5B64E2BCFA0660011FDBA /* SheetLayout.swift */,
-				74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */,
-				743C8DBE2BD402AB0032B31C /* HomeViewController.swift */,
-				743C8DD82BD53CA90032B31C /* HeaderView.swift */,
+				743C8DC42BD40F570032B31C /* TabBarController.swift */,
+				74DD9BB32BE11B1900D580F2 /* FirstView */,
+				74DD9BB12BE11AB700D580F2 /* HomeView */,
 				74D0B5D02BDE6D380056A739 /* BannerCollectionView */,
 				74D0B5C92BDE488E0056A739 /* ChannelCollectionView */,
 				743C8DCF2BD503630032B31C /* SeriesCollectionView */,
 				743C8DC62BD423540032B31C /* PosterCollectionView */,
-				7437D6BB2BCA48AF00A5BE9F /* Main.storyboard */,
-				74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */,
-				74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */,
-				743C8DD62BD539100032B31C /* UIImage+Extensions.swift */,
+				74DD9BB22BE11AE000D580F2 /* Extensions */,
 				7437D6BE2BCA48B000A5BE9F /* Assets.xcassets */,
+				7437D6BB2BCA48AF00A5BE9F /* Main.storyboard */,
 				7437D6C02BCA48B000A5BE9F /* LaunchScreen.storyboard */,
 				7437D6C32BCA48B000A5BE9F /* Info.plist */,
 				7437D6D02BCA6E1B00A5BE9F /* Fonts */,
@@ -187,6 +181,36 @@
 				74D0B5D52BDE6D7A0056A739 /* BannerModel.swift */,
 			);
 			path = BannerCollectionView;
+			sourceTree = "<group>";
+		};
+		74DD9BB12BE11AB700D580F2 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				743C8DBE2BD402AB0032B31C /* HomeViewController.swift */,
+				743C8DD82BD53CA90032B31C /* HeaderView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		74DD9BB22BE11AE000D580F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */,
+				743C8DD62BD539100032B31C /* UIImage+Extensions.swift */,
+				74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		74DD9BB32BE11B1900D580F2 /* FirstView */ = {
+			isa = PBXGroup;
+			children = (
+				74D5B64E2BCFA0660011FDBA /* SheetLayout.swift */,
+				7437D6C92BCA574B00A5BE9F /* NicknameViewController.swift */,
+				7437D6B92BCA48AF00A5BE9F /* LoginViewController.swift */,
+				74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */,
+			);
+			path = FirstView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
