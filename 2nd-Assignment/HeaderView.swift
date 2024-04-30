@@ -25,6 +25,7 @@ class HeaderView: UIStackView {
         label.text = element
         label.font = UIFont(name: "Pretendard-Regular", size: 17)
         label.textColor = .white
+        label.setUnderline(range: NSRange(location: 0, length: label.text?.count ?? 0), thickness: 3.0)
         return label
     }
     

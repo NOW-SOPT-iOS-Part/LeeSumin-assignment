@@ -40,6 +40,7 @@
 		74D5B6552BCFF4770011FDBA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */; };
 		74D5B6572BCFF7FC0011FDBA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 74D5B6562BCFF7FC0011FDBA /* Pretendard-Bold.otf */; };
 		74D5B6592BD03D260011FDBA /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 74D5B6582BD03D260011FDBA /* Pretendard-Medium.otf */; };
+		74DD9BB02BE10C3800D580F2 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		74D5B6562BCFF7FC0011FDBA /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		74D5B6582BD03D260011FDBA /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				743C8DC62BD423540032B31C /* PosterCollectionView */,
 				7437D6BB2BCA48AF00A5BE9F /* Main.storyboard */,
 				74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */,
+				74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */,
 				743C8DD62BD539100032B31C /* UIImage+Extensions.swift */,
 				7437D6BE2BCA48B000A5BE9F /* Assets.xcassets */,
 				7437D6C02BCA48B000A5BE9F /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 				74D0B5D62BDE6D7A0056A739 /* BannerModel.swift in Sources */,
 				7437D6CA2BCA574B00A5BE9F /* NicknameViewController.swift in Sources */,
 				74D5B64F2BCFA0660011FDBA /* SheetLayout.swift in Sources */,
+				74DD9BB02BE10C3800D580F2 /* UILabel+Extensions.swift in Sources */,
 				74D0B5D22BDE6D600056A739 /* BannerCollectionView.swift in Sources */,
 				743C8DD52BD506120032B31C /* SeriesCollectionHeaderView.swift in Sources */,
 				7437D6BA2BCA48AF00A5BE9F /* LoginViewController.swift in Sources */,
