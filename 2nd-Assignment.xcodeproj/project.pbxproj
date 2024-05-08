@@ -16,13 +16,31 @@
 		7437D6CA2BCA574B00A5BE9F /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437D6C92BCA574B00A5BE9F /* NicknameViewController.swift */; };
 		7437D6CD2BCA60A500A5BE9F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7437D6CC2BCA60A500A5BE9F /* SnapKit */; };
 		7437D6CF2BCA60A500A5BE9F /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7437D6CE2BCA60A500A5BE9F /* SnapKit-Dynamic */; };
+		743C8DBF2BD402AB0032B31C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DBE2BD402AB0032B31C /* HomeViewController.swift */; };
+		743C8DC52BD40F570032B31C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DC42BD40F570032B31C /* TabBarController.swift */; };
+		743C8DC82BD4236B0032B31C /* PosterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DC72BD4236B0032B31C /* PosterModel.swift */; };
+		743C8DCA2BD423870032B31C /* PosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DC92BD423870032B31C /* PosterCollectionViewCell.swift */; };
+		743C8DCC2BD4271C0032B31C /* PosterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DCB2BD4271C0032B31C /* PosterCollectionView.swift */; };
+		743C8DCE2BD5035D0032B31C /* SeriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DCD2BD5035D0032B31C /* SeriesCollectionView.swift */; };
+		743C8DD12BD504200032B31C /* SeriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DD02BD504200032B31C /* SeriesCollectionViewCell.swift */; };
+		743C8DD52BD506120032B31C /* SeriesCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DD42BD506120032B31C /* SeriesCollectionHeaderView.swift */; };
+		743C8DD72BD539100032B31C /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DD62BD539100032B31C /* UIImage+Extensions.swift */; };
+		743C8DD92BD53CA90032B31C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DD82BD53CA90032B31C /* HeaderView.swift */; };
+		743C8DDB2BD53F550032B31C /* PosterCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DDA2BD53F550032B31C /* PosterCircleView.swift */; };
 		7461A6182BCF935B005CF27B /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7437D6D12BCA6EFD00A5BE9F /* Pretendard-Regular.otf */; };
 		747EC32A2BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 747EC3292BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf */; };
+		74D0B5CB2BDE49E10056A739 /* ChannelCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0B5CA2BDE49E10056A739 /* ChannelCollectionView.swift */; };
+		74D0B5CD2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0B5CC2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift */; };
+		74D0B5CF2BDE4BC70056A739 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0B5CE2BDE4BC70056A739 /* ChannelModel.swift */; };
+		74D0B5D22BDE6D600056A739 /* BannerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0B5D12BDE6D600056A739 /* BannerCollectionView.swift */; };
+		74D0B5D42BDE6D6F0056A739 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0B5D32BDE6D6F0056A739 /* BannerCollectionViewCell.swift */; };
+		74D0B5D62BDE6D7A0056A739 /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0B5D52BDE6D7A0056A739 /* BannerModel.swift */; };
 		74D5B64F2BCFA0660011FDBA /* SheetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5B64E2BCFA0660011FDBA /* SheetLayout.swift */; };
 		74D5B6532BCFB1100011FDBA /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */; };
 		74D5B6552BCFF4770011FDBA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */; };
 		74D5B6572BCFF7FC0011FDBA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 74D5B6562BCFF7FC0011FDBA /* Pretendard-Bold.otf */; };
 		74D5B6592BD03D260011FDBA /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 74D5B6582BD03D260011FDBA /* Pretendard-Medium.otf */; };
+		74DD9BB02BE10C3800D580F2 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +54,30 @@
 		7437D6C32BCA48B000A5BE9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7437D6C92BCA574B00A5BE9F /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		7437D6D12BCA6EFD00A5BE9F /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Regular.otf"; path = "../../../../../Downloads/Pretendard-1/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		743C8DBE2BD402AB0032B31C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		743C8DC42BD40F570032B31C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		743C8DC72BD4236B0032B31C /* PosterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterModel.swift; sourceTree = "<group>"; };
+		743C8DC92BD423870032B31C /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
+		743C8DCB2BD4271C0032B31C /* PosterCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionView.swift; sourceTree = "<group>"; };
+		743C8DCD2BD5035D0032B31C /* SeriesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCollectionView.swift; sourceTree = "<group>"; };
+		743C8DD02BD504200032B31C /* SeriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		743C8DD42BD506120032B31C /* SeriesCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCollectionHeaderView.swift; sourceTree = "<group>"; };
+		743C8DD62BD539100032B31C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		743C8DD82BD53CA90032B31C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		743C8DDA2BD53F550032B31C /* PosterCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCircleView.swift; sourceTree = "<group>"; };
 		747EC3292BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "../../../../../Downloads/Pretendard-1/public/static/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		74D0B5CA2BDE49E10056A739 /* ChannelCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionView.swift; sourceTree = "<group>"; };
+		74D0B5CC2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewCell.swift; sourceTree = "<group>"; };
+		74D0B5CE2BDE4BC70056A739 /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
+		74D0B5D12BDE6D600056A739 /* BannerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionView.swift; sourceTree = "<group>"; };
+		74D0B5D32BDE6D6F0056A739 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		74D0B5D52BDE6D7A0056A739 /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
 		74D5B64E2BCFA0660011FDBA /* SheetLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetLayout.swift; sourceTree = "<group>"; };
 		74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		74D5B6562BCFF7FC0011FDBA /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		74D5B6582BD03D260011FDBA /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,13 +114,16 @@
 			children = (
 				7437D6B52BCA48AF00A5BE9F /* AppDelegate.swift */,
 				7437D6B72BCA48AF00A5BE9F /* SceneDelegate.swift */,
-				7437D6C92BCA574B00A5BE9F /* NicknameViewController.swift */,
-				7437D6B92BCA48AF00A5BE9F /* LoginViewController.swift */,
-				74D5B64E2BCFA0660011FDBA /* SheetLayout.swift */,
-				74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */,
-				7437D6BB2BCA48AF00A5BE9F /* Main.storyboard */,
-				74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */,
+				743C8DC42BD40F570032B31C /* TabBarController.swift */,
+				74DD9BB32BE11B1900D580F2 /* FirstView */,
+				74DD9BB12BE11AB700D580F2 /* HomeView */,
+				74D0B5D02BDE6D380056A739 /* BannerCollectionView */,
+				74D0B5C92BDE488E0056A739 /* ChannelCollectionView */,
+				743C8DCF2BD503630032B31C /* SeriesCollectionView */,
+				743C8DC62BD423540032B31C /* PosterCollectionView */,
+				74DD9BB22BE11AE000D580F2 /* Extensions */,
 				7437D6BE2BCA48B000A5BE9F /* Assets.xcassets */,
+				7437D6BB2BCA48AF00A5BE9F /* Main.storyboard */,
 				7437D6C02BCA48B000A5BE9F /* LaunchScreen.storyboard */,
 				7437D6C32BCA48B000A5BE9F /* Info.plist */,
 				7437D6D02BCA6E1B00A5BE9F /* Fonts */,
@@ -101,6 +140,77 @@
 				747EC3292BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		743C8DC62BD423540032B31C /* PosterCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				743C8DC72BD4236B0032B31C /* PosterModel.swift */,
+				743C8DC92BD423870032B31C /* PosterCollectionViewCell.swift */,
+				743C8DDA2BD53F550032B31C /* PosterCircleView.swift */,
+				743C8DCB2BD4271C0032B31C /* PosterCollectionView.swift */,
+			);
+			path = PosterCollectionView;
+			sourceTree = "<group>";
+		};
+		743C8DCF2BD503630032B31C /* SeriesCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				743C8DCD2BD5035D0032B31C /* SeriesCollectionView.swift */,
+				743C8DD02BD504200032B31C /* SeriesCollectionViewCell.swift */,
+				743C8DD42BD506120032B31C /* SeriesCollectionHeaderView.swift */,
+			);
+			path = SeriesCollectionView;
+			sourceTree = "<group>";
+		};
+		74D0B5C92BDE488E0056A739 /* ChannelCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				74D0B5CA2BDE49E10056A739 /* ChannelCollectionView.swift */,
+				74D0B5CC2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift */,
+				74D0B5CE2BDE4BC70056A739 /* ChannelModel.swift */,
+			);
+			path = ChannelCollectionView;
+			sourceTree = "<group>";
+		};
+		74D0B5D02BDE6D380056A739 /* BannerCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				74D0B5D12BDE6D600056A739 /* BannerCollectionView.swift */,
+				74D0B5D32BDE6D6F0056A739 /* BannerCollectionViewCell.swift */,
+				74D0B5D52BDE6D7A0056A739 /* BannerModel.swift */,
+			);
+			path = BannerCollectionView;
+			sourceTree = "<group>";
+		};
+		74DD9BB12BE11AB700D580F2 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				743C8DBE2BD402AB0032B31C /* HomeViewController.swift */,
+				743C8DD82BD53CA90032B31C /* HeaderView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		74DD9BB22BE11AE000D580F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */,
+				743C8DD62BD539100032B31C /* UIImage+Extensions.swift */,
+				74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		74DD9BB32BE11B1900D580F2 /* FirstView */ = {
+			isa = PBXGroup;
+			children = (
+				74D5B64E2BCFA0660011FDBA /* SheetLayout.swift */,
+				7437D6C92BCA574B00A5BE9F /* NicknameViewController.swift */,
+				7437D6B92BCA48AF00A5BE9F /* LoginViewController.swift */,
+				74D5B6542BCFF4760011FDBA /* WelcomeViewController.swift */,
+			);
+			path = FirstView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,13 +295,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				743C8DC82BD4236B0032B31C /* PosterModel.swift in Sources */,
+				743C8DD12BD504200032B31C /* SeriesCollectionViewCell.swift in Sources */,
+				74D0B5D42BDE6D6F0056A739 /* BannerCollectionViewCell.swift in Sources */,
+				74D0B5D62BDE6D7A0056A739 /* BannerModel.swift in Sources */,
 				7437D6CA2BCA574B00A5BE9F /* NicknameViewController.swift in Sources */,
 				74D5B64F2BCFA0660011FDBA /* SheetLayout.swift in Sources */,
+				74DD9BB02BE10C3800D580F2 /* UILabel+Extensions.swift in Sources */,
+				74D0B5D22BDE6D600056A739 /* BannerCollectionView.swift in Sources */,
+				743C8DD52BD506120032B31C /* SeriesCollectionHeaderView.swift in Sources */,
 				7437D6BA2BCA48AF00A5BE9F /* LoginViewController.swift in Sources */,
+				743C8DD92BD53CA90032B31C /* HeaderView.swift in Sources */,
 				74D5B6532BCFB1100011FDBA /* UITextField+Extensions.swift in Sources */,
 				7437D6B62BCA48AF00A5BE9F /* AppDelegate.swift in Sources */,
+				74D0B5CB2BDE49E10056A739 /* ChannelCollectionView.swift in Sources */,
+				743C8DCE2BD5035D0032B31C /* SeriesCollectionView.swift in Sources */,
 				7437D6B82BCA48AF00A5BE9F /* SceneDelegate.swift in Sources */,
 				74D5B6552BCFF4770011FDBA /* WelcomeViewController.swift in Sources */,
+				74D0B5CF2BDE4BC70056A739 /* ChannelModel.swift in Sources */,
+				743C8DCA2BD423870032B31C /* PosterCollectionViewCell.swift in Sources */,
+				74D0B5CD2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift in Sources */,
+				743C8DC52BD40F570032B31C /* TabBarController.swift in Sources */,
+				743C8DBF2BD402AB0032B31C /* HomeViewController.swift in Sources */,
+				743C8DDB2BD53F550032B31C /* PosterCircleView.swift in Sources */,
+				743C8DCC2BD4271C0032B31C /* PosterCollectionView.swift in Sources */,
+				743C8DD72BD539100032B31C /* UIImage+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
