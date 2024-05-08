@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 
 class HomeViewController: UIViewController {
@@ -121,7 +122,7 @@ class HomeViewController: UIViewController {
     }
     
     private lazy var titleImageView : UIView = {
-        let imageView = UIImageView(image: UIImage(named: "tving_textlogo")?.withTintColor(UIColor(named: "lightPink") ?? .white))
+        let imageView = UIImageView(image: UIImage(named: "tvingTextLogo")?.withTintColor(UIColor(named: "lightPink") ?? .white))
         return imageView
     }()
     

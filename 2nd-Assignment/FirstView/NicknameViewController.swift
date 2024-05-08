@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 
 protocol SendNicknameProtocol: AnyObject {
@@ -84,7 +85,7 @@ class NicknameViewController: UIViewController, UITextFieldDelegate{
         
     }
     
-    private let finishButton: UIButton = {
+    lazy var finishButton: UIButton = {
         let button = UIButton()
         button.setTitle("저장하기", for: .normal)
         button.isEnabled = false

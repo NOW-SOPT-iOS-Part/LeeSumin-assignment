@@ -27,7 +27,7 @@ class PosterCircleView: UIStackView {
     
     func makeCircleImageView() -> UIImageView{
         lazy var imageView = UIImageView()
-        imageView.image = UIImage(named: "Ellipse_Gray3")
+        imageView.image = UIImage(named: "ellipseGray3")
         return imageView
     }
     
