@@ -11,21 +11,34 @@ class DailyMovieViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setData()
         // Do any additional setup after loading the view.
     }
     
-    static func movieDate() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyyMMdd"
-        return dateFormatter.string(from: Date())
+    func setData() {
+        let key = "95dd7589a2ca8b8126c77eabf642771a"
+        let targetDt = "20240509"//Date.movieDate()
+
+        DailyMovieService.shared.getDailyMovie(key: key, targetDt: targetDt) { [weak self] response in
+            switch response{
+            case .success(let data):
+                guard let data = data as? DailyMovieInfo else {return}
+                dump(data)
+            case .decodedErr:
+                print("decoding error")
+            case .networkFail:
+                print("network fail")
+            case .pathErr:
+                print("path error")
+            case .requestErr:
+                print("request error")
+            case .serverErr:
+                print("server error")
+            }
+        }
+        
     }
     
-    func setData() {
-        let request = DailyMovieRequestModel(key: "95dd7589a2ca8b8126c77eabf642771a", targetDt: DailyMovieViewController.movieDate())
-        
-        
-    }
     
 
     /*
