@@ -18,9 +18,7 @@ class SeriesCollectionHeaderView: UICollectionReusableView { //UICollectionReusa
     override func layoutSubviews() {
         super.layoutSubviews()
         showAllButtonConfiguration()
-        [titleLabel, showAllButton].forEach{
-            self.addSubview($0)
-        }
+        addSubviews(titleLabel, showAllButton)
         titleLabel.snp.makeConstraints{
             $0.leading.equalToSuperview().offset(15)
             $0.top.bottom.centerY.equalToSuperview()
@@ -46,7 +44,7 @@ class SeriesCollectionHeaderView: UICollectionReusableView { //UICollectionReusa
         container.font = UIFont(name: "Pretendard-Medium", size: 11)
         container.foregroundColor = UIColor(named: "gray2.5") //textcolor
         configuration.attributedTitle = AttributedString("전체보기", attributes: container)
-        configuration.image = UIImage(named: "chevron_right")?.resized(to: CGSize(width: 10, height: 10))
+        configuration.image = UIImage(named: "chevronRight")?.resized(to: CGSize(width: 10, height: 10))
         configuration.imagePlacement = .trailing
     }
     

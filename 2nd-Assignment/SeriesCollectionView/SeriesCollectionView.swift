@@ -10,9 +10,7 @@ import UIKit
 class SeriesCollectionView: UICollectionView{
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.sectionHeadersPinToVisibleBounds = true //헤더 collectionView 위에 고정
+        let flowLayout = SeriesCollectionView.horizontalFlowLayout()
         super.init(frame: frame, collectionViewLayout: flowLayout)
         self.backgroundColor = .black
         register()
@@ -42,7 +40,7 @@ class SeriesCollectionView: UICollectionView{
         self.dataSource = self
     }
     
-    private var seriesData = PosterModel.posterDummy() {
+    private var seriesData = PosterModel.posterDummy {
        didSet {
            self.reloadData()
        }

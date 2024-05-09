@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 
 class WelcomeViewController: UIViewController {
@@ -16,17 +17,17 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
         welcomeLabel.text = "\(welcomeName ?? "00")님\n반가워요!"
-        setuplayout()
+        setupLayout()
         // Do any additional setup after loading the view.
     }
     
-    private func setuplayout(){
+    private func setupLayout(){
         view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         view.addSubview(brandImage)
         view.addSubview(welcomeLabel)
         view.addSubview(mainButton)
         brandImage.snp.makeConstraints{
-            $0.top.equalToSuperview().inset(58+44)
+            $0.top.equalToSuperview().inset(102)
             $0.leading.trailing.equalToSuperview()
         }
         welcomeLabel.snp.makeConstraints{
@@ -56,7 +57,7 @@ class WelcomeViewController: UIViewController {
         return label
     }()
     
-    private let mainButton: UIButton = {
+    lazy var mainButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(named: "BrandColor")
         button.setTitle("메인으로", for: .normal)

@@ -13,14 +13,13 @@ struct PosterModel{
 }
 
 extension PosterModel{
-    static func posterDummy() -> [PosterModel]{
-        return [
-            PosterModel(posterImg: .movie5, posterLabel: "너의 이름은"),
-            PosterModel(posterImg: .movie4, posterLabel: "스즈메의 문단속"),
-            PosterModel(posterImg: .movie3, posterLabel: "반지의 제왕"),
-            PosterModel(posterImg: .movie2, posterLabel: "해리포터와 마법사의 돌"),
-            PosterModel(posterImg: .movie1, posterLabel: "시그널")
-        ]
-    }
-} // 왜 static func?
+    static let posterDummy = [
+        PosterModel(posterImg: .movie5, posterLabel: "너의 이름은"),
+        PosterModel(posterImg: .movie4, posterLabel: "스즈메의 문단속"),
+        PosterModel(posterImg: .movie3, posterLabel: "반지의 제왕"),
+        PosterModel(posterImg: .movie2, posterLabel: "해리포터와 마법사의 돌"),
+        PosterModel(posterImg: .movie1, posterLabel: "시그널")
+    ]
+    
+} 
 

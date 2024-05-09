@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 
 class HomeViewController: UIViewController {
@@ -120,12 +121,12 @@ class HomeViewController: UIViewController {
         
     }
     
-    private lazy var titleImageView : UIView = {
-        let imageView = UIImageView(image: UIImage(named: "tving_textlogo")?.withTintColor(UIColor(named: "lightPink") ?? .white))
+    private let titleImageView : UIView = {
+        let imageView = UIImageView(image: UIImage(named: "tvingTextLogo")?.withTintColor(UIColor(named: "lightPink") ?? .white))
         return imageView
     }()
     
-    private lazy var profileImageView : UIView = {
+    private let profileImageView : UIView = {
         let imageView = UIImageView(image: UIImage(named: "doosanLogo"))
         imageView.layer.cornerRadius = 15
         imageView.clipsToBounds = true
@@ -150,7 +151,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private lazy var titleView : UIView = {
+    private let titleView : UIView = {
         let view = UIView()
         view.backgroundColor = .clear
         return view

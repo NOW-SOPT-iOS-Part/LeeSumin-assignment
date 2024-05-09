@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 
 class LoginViewController: UIViewController, SendNicknameProtocol{
@@ -19,22 +20,14 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         super.viewDidLoad()
         idTextField.delegate = self
         pwTextField.delegate = self
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        view.backgroundColor = .black
         setupLayout()
     }
 
     private func setupLayout(){
-        view.addSubview(titleLabel)
-        view.addSubview(idTextField)
-        view.addSubview(clearIdButton)
-        view.addSubview(pwTextField)
-        view.addSubview(showPasswordButton)
-        view.addSubview(clearPasswordButton)
-        view.addSubview(loginButton)
-        view.addSubview(findID)
-        view.addSubview(findPW)
-        view.addSubview(noAccount)
-        view.addSubview(nicknameButton)
+        [titleLabel, idTextField, clearIdButton, pwTextField, showPasswordButton, clearPasswordButton, loginButton, findIdLabel, findPwLabel, noAccountLabel, nicknameButton].forEach{
+            view.addSubview($0)
+        }
         titleLabel.snp.makeConstraints{
             $0.centerX.equalToSuperview()
             //$0.width.equalTo(156)
@@ -60,14 +53,12 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
             $0.top.equalTo(idTextField.snp.top).offset(63)
         }
         showPasswordButton.snp.makeConstraints{
-            $0.width.equalTo(20)
-            $0.height.equalTo(20)
+            $0.width.height.equalTo(20)
             $0.centerY.equalTo(pwTextField.snp.centerY)
             $0.trailing.equalTo(pwTextField.snp.trailing).inset(20)
         }
         clearPasswordButton.snp.makeConstraints{
-            $0.width.equalTo(20)
-            $0.height.equalTo(20)
+            $0.width.height.equalTo(20)
             $0.centerY.equalTo(pwTextField.snp.centerY)
             $0.trailing.equalTo(showPasswordButton.snp.trailing).inset(36)
         }
@@ -77,29 +68,27 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
             $0.height.equalTo(52)
             $0.top.equalTo(pwTextField.snp.top).offset(73)
         }
-        findID.snp.makeConstraints{
-            //$0.width.equalTo(62)
+        findIdLabel.snp.makeConstraints{
             $0.height.equalTo(22)
             $0.top.equalTo(loginButton.snp.top).offset(83)
             $0.leading.equalToSuperview().offset(92)
         }
-        findPW.snp.makeConstraints{
-            //$0.width.equalTo(73)
+        findPwLabel.snp.makeConstraints{
             $0.height.equalTo(22)
-            $0.top.equalTo(findID.snp.top)
+            $0.top.equalTo(findIdLabel.snp.top)
             $0.leading.equalToSuperview().offset(223)
         }
-        noAccount.snp.makeConstraints{
+        noAccountLabel.snp.makeConstraints{
             //$0.width.equalTo(129)
             $0.height.equalTo(22)
-            $0.top.equalTo(findID.snp.top).offset(50)
+            $0.top.equalTo(findIdLabel.snp.top).offset(50)
             $0.leading.equalToSuperview().offset(51)
         }
         nicknameButton.snp.makeConstraints{
             $0.width.equalTo(128)
             $0.height.equalTo(22)
-            $0.top.equalTo(findID.snp.top).offset(50)
-            $0.leading.equalTo(noAccount.snp.leading).offset(146)
+            $0.top.equalTo(findIdLabel.snp.top).offset(50)
+            $0.leading.equalTo(noAccountLabel.snp.leading).offset(146)
         }
     }
     
@@ -111,9 +100,9 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         return label
     }()
     
-    private let clearIdButton: UIButton = {
+    lazy var clearIdButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "x-in-circle")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .normal)
+        button.setImage(UIImage(named: "xInCircle")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .normal)
         button.addTarget(self, action: #selector(clearIdButtonTapped), for: .touchUpInside)
         button.isHidden = true
         button.isEnabled = false
@@ -139,9 +128,9 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
     }()
     
     
-    private let clearPasswordButton: UIButton = {
+    lazy var clearPasswordButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "x-in-circle")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .normal)
+        button.setImage(UIImage(named: "xInCircle")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .normal)
         button.addTarget(self, action: #selector(clearPasswordButtonTapped), for: .touchUpInside)
         button.isHidden = true
         button.isEnabled = false
@@ -152,10 +141,10 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         pwTextField.text = ""
     }
     
-    private let showPasswordButton: UIButton = {
+    lazy var showPasswordButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "eye")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .normal)
-        button.setImage(UIImage(named: "eye-slash")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .selected)
+        button.setImage(UIImage(named: "eyeSlash")?.withTintColor(UIColor(named: "gray2") ?? .systemGray), for: .selected)
         button.addTarget(self, action: #selector(showPasswordButtonTapped), for: .touchUpInside)
         button.isHidden = true
         button.isEnabled = false
@@ -183,7 +172,7 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         return textField
     }()
     
-    private let loginButton : UIButton = {
+    lazy var loginButton : UIButton = {
         let button = UIButton()
         button.setTitle("로그인하기", for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
@@ -216,7 +205,7 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
     }
     
     
-    private let findID : UILabel = {
+    private let findIdLabel : UILabel = {
         let label = UILabel()
         label.text = "아이디 찾기"
         label.font = UIFont(name: "Pretendard-SemiBold", size: 14)
@@ -224,7 +213,7 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         return label
     }()
     
-    private let findPW : UILabel = {
+    private let findPwLabel : UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         label.text = "비밀번호 찾기"
@@ -232,7 +221,7 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         return label
     }()
     
-    private let noAccount: UILabel = {
+    private let noAccountLabel: UILabel = {
         let label = UILabel()
         label.text = "아직 계정이 없으신가요?"
         label.font = UIFont(name: "Pretendard-SemiBold", size: 14)
@@ -240,7 +229,7 @@ class LoginViewController: UIViewController, SendNicknameProtocol{
         return label
     }()
     
-    private let nicknameButton: UIButton = {
+    lazy var nicknameButton: UIButton = {
         let button = UIButton()
         button.setTitle("닉네임 만들러가기", for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-Regular", size: 14)

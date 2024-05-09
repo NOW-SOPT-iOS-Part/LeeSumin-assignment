@@ -12,6 +12,7 @@ extension UITextField {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: self.frame.height))
         self.leftView = paddingView
         self.leftViewMode = ViewMode.always
+        // 텍스트필드의 상태에 상관없이 항상 leftView 표시
     }
     
     func addRightPadding(padding: CGFloat) {

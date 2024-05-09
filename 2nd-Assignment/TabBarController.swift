@@ -25,7 +25,7 @@ class TabBarController: UITabBarController {
         if let items = self.tabBar.items{
             items[0].title = "홈"
             items[0].image = UIImage(systemName: "house")
-            items[0].selectedImage = UIImage(systemName: "house.fill")?.withTintColor(.white) //왜 하얀색 안 되지
+            items[0].selectedImage = UIImage(systemName: "house.fill")?.withRenderingMode(.alwaysTemplate).withTintColor(.white) //왜 하얀색 안 되지
         }
         
     }

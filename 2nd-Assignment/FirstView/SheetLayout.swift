@@ -20,7 +20,6 @@ func setSheetLayout(for viewController: UIViewController) {
     
     if let sheet = viewController.sheetPresentationController {
         sheet.detents = [customDetent]
-        sheet.prefersScrollingExpandsWhenScrolledToEdge = true
         sheet.prefersGrabberVisible = true
     }
 }
