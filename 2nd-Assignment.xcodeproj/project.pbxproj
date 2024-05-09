@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		740AB84E2BEC7E1C0034B0E4 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AB84D2BEC7E1C0034B0E4 /* UIView+Extensions.swift */; };
+		740AB8502BEC805A0034B0E4 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AB84F2BEC805A0034B0E4 /* UICollectionView+Extensions.swift */; };
 		7437D6B62BCA48AF00A5BE9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437D6B52BCA48AF00A5BE9F /* AppDelegate.swift */; };
 		7437D6B82BCA48AF00A5BE9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437D6B72BCA48AF00A5BE9F /* SceneDelegate.swift */; };
 		7437D6BA2BCA48AF00A5BE9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437D6B92BCA48AF00A5BE9F /* LoginViewController.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		740AB84D2BEC7E1C0034B0E4 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		740AB84F2BEC805A0034B0E4 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		7437D6B22BCA48AF00A5BE9F /* 2nd-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2nd-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7437D6B52BCA48AF00A5BE9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7437D6B72BCA48AF00A5BE9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */,
+				740AB84F2BEC805A0034B0E4 /* UICollectionView+Extensions.swift */,
+				740AB84D2BEC7E1C0034B0E4 /* UIView+Extensions.swift */,
 				743C8DD62BD539100032B31C /* UIImage+Extensions.swift */,
 				74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */,
 			);
@@ -313,10 +319,12 @@
 				7437D6B82BCA48AF00A5BE9F /* SceneDelegate.swift in Sources */,
 				74D5B6552BCFF4770011FDBA /* WelcomeViewController.swift in Sources */,
 				74D0B5CF2BDE4BC70056A739 /* ChannelModel.swift in Sources */,
+				740AB84E2BEC7E1C0034B0E4 /* UIView+Extensions.swift in Sources */,
 				743C8DCA2BD423870032B31C /* PosterCollectionViewCell.swift in Sources */,
 				74D0B5CD2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift in Sources */,
 				743C8DC52BD40F570032B31C /* TabBarController.swift in Sources */,
 				743C8DBF2BD402AB0032B31C /* HomeViewController.swift in Sources */,
+				740AB8502BEC805A0034B0E4 /* UICollectionView+Extensions.swift in Sources */,
 				743C8DDB2BD53F550032B31C /* PosterCircleView.swift in Sources */,
 				743C8DCC2BD4271C0032B31C /* PosterCollectionView.swift in Sources */,
 				743C8DD72BD539100032B31C /* UIImage+Extensions.swift in Sources */,

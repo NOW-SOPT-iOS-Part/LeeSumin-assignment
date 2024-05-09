@@ -18,9 +18,7 @@ class SeriesCollectionHeaderView: UICollectionReusableView { //UICollectionReusa
     override func layoutSubviews() {
         super.layoutSubviews()
         showAllButtonConfiguration()
-        [titleLabel, showAllButton].forEach{
-            self.addSubview($0)
-        }
+        addSubviews(titleLabel, showAllButton)
         titleLabel.snp.makeConstraints{
             $0.leading.equalToSuperview().offset(15)
             $0.top.bottom.centerY.equalToSuperview()

@@ -20,7 +20,7 @@ extension UILabel{
         }
         
         return attributedString
-    }
+    } // String -> attributedString
     
     func setUnderline(range: NSRange, thickness: CGFloat) {
         guard let attributedString = self.mutableAttributedString() else { return }

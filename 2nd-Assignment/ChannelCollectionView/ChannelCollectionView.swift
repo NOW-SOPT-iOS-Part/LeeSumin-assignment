@@ -10,16 +10,14 @@ import UIKit
 class ChannelCollectionView: UICollectionView{
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.sectionHeadersPinToVisibleBounds = true 
+        let flowLayout = ChannelCollectionView.horizontalFlowLayout()
         super.init(frame: frame, collectionViewLayout: flowLayout)
         self.backgroundColor = .black
         register()
         setDelegate()
     }
     
-    required init?(coder: NSCoder) {
+    required init?(coder: NSCoder){
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -42,7 +40,7 @@ class ChannelCollectionView: UICollectionView{
         self.dataSource = self
     }
     
-    private var channelData = ChannelModel.channelDummy() {
+    private var channelData = ChannelModel.channelDummy {
        didSet {
            self.reloadData()
        }

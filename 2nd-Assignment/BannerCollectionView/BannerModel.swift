@@ -13,13 +13,10 @@ struct BannerModel{
 }
 
 extension BannerModel{
-    static func bannerDummy() -> [BannerModel]{
-        return [
-            BannerModel(bannerImg: .doosanWhite),
-            BannerModel(bannerImg: .doosanBlack),
-            BannerModel(bannerImg: .doosanWhite),
-            BannerModel(bannerImg: .doosanBlack)
-            
-        ]
-    }
+    static let bannerDummy = [
+        BannerModel(bannerImg: .doosanWhite),
+        BannerModel(bannerImg: .doosanBlack),
+        BannerModel(bannerImg: .doosanWhite),
+        BannerModel(bannerImg: .doosanBlack)
+    ]
 }

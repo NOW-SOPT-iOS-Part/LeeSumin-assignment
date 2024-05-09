@@ -34,7 +34,7 @@ final class PosterCollectionViewCell: UICollectionViewCell { //cell은 항상 �
     
     private let posterImageView : UIImageView = {
         let imageView = UIImageView()
-        //imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFill //이미지를 비율에 맞게
         return imageView
     }()
     

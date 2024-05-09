@@ -10,8 +10,7 @@ import UIKit
 class PosterCollectionView: UICollectionView{
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
+        let flowLayout = PosterCollectionView.horizontalFlowLayout()
         super.init(frame: frame, collectionViewLayout: flowLayout)
         register()
         setDelegate()
@@ -36,7 +35,7 @@ class PosterCollectionView: UICollectionView{
         self.dataSource = self
     }
     
-    private var posterData = PosterModel.posterDummy() {
+    private var posterData = PosterModel.posterDummy {
        didSet {
            self.reloadData()
        }
