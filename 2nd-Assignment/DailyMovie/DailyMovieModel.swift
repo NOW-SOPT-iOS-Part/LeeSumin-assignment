@@ -11,3 +11,4 @@ struct DailyMovieInfo: Codable {
     let openDate: String
     let audience: String
 }
+

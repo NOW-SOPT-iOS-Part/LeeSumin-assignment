@@ -12,8 +12,8 @@ import Moya
 final class DailyMovieService {
     static let shared = DailyMovieService()
     
-    private var movieProvider = MoyaProvider<MovieTargetType>()
-    
+    private var movieProvider = MoyaProvider<MovieTargetType>(plugins: [MoyaLoggingPlugin()])
+
     private init() {}
 }
 
@@ -32,10 +32,11 @@ extension DailyMovieService {
             return .networkFail
         }
     }
-    
+   
     private func decodeDailyMovieResponse(from data: Data) -> Result<[DailyMovieInfo], Error> {
         do {
             let decoder = JSONDecoder()
+
             let dailyMovieResponse = try decoder.decode(DailyMovieResponse.self, from: data)
             
             let movieInfos = dailyMovieResponse.boxOfficeResult.dailyBoxOfficeList.map {
@@ -63,6 +64,4 @@ extension DailyMovieService {
             }
         }
     }
-                    
-                    
 }

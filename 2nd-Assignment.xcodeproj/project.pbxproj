@@ -55,6 +55,9 @@
 		74D5B6572BCFF7FC0011FDBA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 74D5B6562BCFF7FC0011FDBA /* Pretendard-Bold.otf */; };
 		74D5B6592BD03D260011FDBA /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 74D5B6582BD03D260011FDBA /* Pretendard-Medium.otf */; };
 		74DD9BB02BE10C3800D580F2 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */; };
+		74F9F4072BEDE5F9009618FA /* DailyMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9F4062BEDE5F9009618FA /* DailyMovieView.swift */; };
+		74F9F4092BEDE898009618FA /* DailyMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9F4082BEDE898009618FA /* DailyMovieCollectionViewCell.swift */; };
+		74F9F40B2BEE2227009618FA /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9F40A2BEE2227009618FA /* MoyaLoggingPlugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +105,9 @@
 		74D5B6562BCFF7FC0011FDBA /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		74D5B6582BD03D260011FDBA /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		74F9F4062BEDE5F9009618FA /* DailyMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieView.swift; sourceTree = "<group>"; };
+		74F9F4082BEDE898009618FA /* DailyMovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		74F9F40A2BEE2227009618FA /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				743881112BECCC8700CADB65 /* Config.swift */,
+				74F9F40A2BEE2227009618FA /* MoyaLoggingPlugin.swift */,
 				743881132BECCC9800CADB65 /* NetworkResult.swift */,
 			);
 			path = Network;
@@ -189,6 +196,8 @@
 				7438811A2BECD06600CADB65 /* MovieTargetType.swift */,
 				7438811E2BECD7F000CADB65 /* DailyMovieResponse.swift */,
 				743881182BECCEBD00CADB65 /* DailyMovieViewController.swift */,
+				74F9F4082BEDE898009618FA /* DailyMovieCollectionViewCell.swift */,
+				74F9F4062BEDE5F9009618FA /* DailyMovieView.swift */,
 			);
 			path = DailyMovie;
 			sourceTree = "<group>";
@@ -371,11 +380,14 @@
 				74D5B6532BCFB1100011FDBA /* UITextField+Extensions.swift in Sources */,
 				7437D6B62BCA48AF00A5BE9F /* AppDelegate.swift in Sources */,
 				74D0B5CB2BDE49E10056A739 /* ChannelCollectionView.swift in Sources */,
+				74F9F4092BEDE898009618FA /* DailyMovieCollectionViewCell.swift in Sources */,
 				743C8DCE2BD5035D0032B31C /* SeriesCollectionView.swift in Sources */,
 				7437D6B82BCA48AF00A5BE9F /* SceneDelegate.swift in Sources */,
 				74D5B6552BCFF4770011FDBA /* WelcomeViewController.swift in Sources */,
 				74D0B5CF2BDE4BC70056A739 /* ChannelModel.swift in Sources */,
+				74F9F4072BEDE5F9009618FA /* DailyMovieView.swift in Sources */,
 				7438811F2BECD7F000CADB65 /* DailyMovieResponse.swift in Sources */,
+				74F9F40B2BEE2227009618FA /* MoyaLoggingPlugin.swift in Sources */,
 				740AB84E2BEC7E1C0034B0E4 /* UIView+Extensions.swift in Sources */,
 				743C8DCA2BD423870032B31C /* PosterCollectionViewCell.swift in Sources */,
 				743881142BECCC9800CADB65 /* NetworkResult.swift in Sources */,
