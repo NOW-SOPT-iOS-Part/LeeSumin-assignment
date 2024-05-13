@@ -32,7 +32,6 @@ class DailyMovieView: UIView {
     lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .green
         return collectionView
     }()
     

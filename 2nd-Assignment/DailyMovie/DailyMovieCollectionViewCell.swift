@@ -16,7 +16,8 @@ final class DailyMovieCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .yellow
+        self.backgroundColor = .systemCyan
+        self.layer.cornerRadius = 10
         setLayout()
     }
     
@@ -49,17 +50,17 @@ final class DailyMovieCollectionViewCell: UICollectionViewCell {
         }
         
         audienceLabel.snp.makeConstraints{
-            $0.top.equalTo(rankingLabel.snp.bottom).offset(10)
-            $0.trailing.equalToSuperview().offset(9)
+            $0.top.equalTo(openDateLabel.snp.bottom).offset(10)
+            $0.trailing.equalToSuperview().inset(9)
             $0.height.equalTo(30)
         }
     }
     
     private let rankingLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .systemPink
+        label.textColor = .systemBlue
         label.textAlignment = .center
-        label.font = UIFont(name: "Pretendard-Regular", size: 18)
+        label.font = UIFont(name: "Pretendard-Regular", size: 36)
         return label
     }()
     

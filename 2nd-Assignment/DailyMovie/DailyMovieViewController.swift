@@ -15,7 +15,7 @@ class DailyMovieViewController: UIViewController, UICollectionViewDelegate {
     private var collectionView : UICollectionView
     
     private var dailyMovieData: [DailyMovieInfo] = []
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setData()
@@ -51,7 +51,7 @@ class DailyMovieViewController: UIViewController, UICollectionViewDelegate {
     
     func setData() {
         let key = "95dd7589a2ca8b8126c77eabf642771a"
-        let targetDt = "20240509" //Date.movieDate()
+        let targetDt = "20240510" // Date.movieDate()
 
         DailyMovieService.shared.getDailyMovie(key: key, targetDt: targetDt) { [weak self] response in
             switch response{
@@ -87,24 +87,23 @@ class DailyMovieViewController: UIViewController, UICollectionViewDelegate {
     }
 }
 
-extension DailyMovieView: UICollectionViewDelegateFlowLayout {
+extension DailyMovieViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = UIScreen.main.bounds.width
-        let doubleCellWidth = screenWidth - movieInset.left - movieInset.right - movieInterItemSpacing
-        // print("@log - \(doubleCellWidth)")
+        let doubleCellWidth = screenWidth - rootView.movieInset.left - rootView.movieInset.right - rootView.movieInterItemSpacing
         return CGSize(width: doubleCellWidth / 2, height: 198)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return movieLineSpacing
+        return rootView.movieLineSpacing
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return movieInterItemSpacing
+        return rootView.movieInterItemSpacing
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return movieInset
+        return rootView.movieInset
     }
 }
 
