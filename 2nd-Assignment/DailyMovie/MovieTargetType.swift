@@ -44,7 +44,7 @@ extension MovieTargetType : TargetType {
     var headers: [String : String]? {
         switch self{
         case .getDailyMovie:
-            return ["Content-Type": "application/json"
+                return ["Content-Type": "application/json"
             ]
         }
     }

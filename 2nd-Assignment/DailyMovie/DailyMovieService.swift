@@ -22,8 +22,8 @@ extension DailyMovieService {
         switch statusCode {
         case 200..<205:
             let decodingResult = self.decodeDailyMovieResponse(from: data)
-            print(decodingResult)
-            return .success(decodingResult)
+            return decodingResult
+//            return .success(decodingResult)
         case 400..<500:
             return .requestErr
         case 500:
@@ -32,20 +32,14 @@ extension DailyMovieService {
             return .networkFail
         }
     }
-   
-    private func decodeDailyMovieResponse(from data: Data) -> Result<[DailyMovieInfo], Error> {
+
+    private func decodeDailyMovieResponse(from data: Data) -> NetworkResult<Any> {
         do {
             let decoder = JSONDecoder()
-
             let dailyMovieResponse = try decoder.decode(DailyMovieResponse.self, from: data)
-            
-            let movieInfos = dailyMovieResponse.boxOfficeResult.dailyBoxOfficeList.map {
-                DailyMovieInfo(rank: $0.rank, name: $0.movieNm, openDate: $0.openDt, audience: $0.audiAcc)
-            }
-            
-            return .success(movieInfos)
+            return .success(dailyMovieResponse as Any)
         } catch {
-            return .failure(error)
+            return .decodedErr
         }
     }
     
@@ -58,6 +52,7 @@ extension DailyMovieService {
                 let data = response.data
         
                 let networkResult = self.judgeStatus(by: statusCode, data, DailyMovieResponse.self)
+                print("@Log1 - \(networkResult)")
                 completion(networkResult)
             case .failure(_):
                 completion(.networkFail)

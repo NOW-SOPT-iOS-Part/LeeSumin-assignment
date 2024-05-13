@@ -14,7 +14,7 @@ class DailyMovieViewController: UIViewController, UICollectionViewDelegate {
     private let rootView = DailyMovieView()
     private var collectionView : UICollectionView
     
-    private var dailyMovieData = [DailyMovieInfo]()
+    private var dailyMovieData: [DailyMovieInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +56,13 @@ class DailyMovieViewController: UIViewController, UICollectionViewDelegate {
         DailyMovieService.shared.getDailyMovie(key: key, targetDt: targetDt) { [weak self] response in
             switch response{
             case .success(let data):
-                dump(data)
-                if let movieData = data as? [DailyMovieInfo] {
-                   self?.dailyMovieData = movieData
+                print("@Log - \(data)")
+                if let movieData = data as? DailyMovieResponse {
+                    let dailyMovieData = movieData.boxOfficeResult.dailyBoxOfficeList.map {
+                        DailyMovieInfo(rank: $0.rank, name: $0.movieNm, openDate: $0.openDt, audience: $0.audiAcc)
+                    }
+                    self?.dailyMovieData = dailyMovieData
+                    print("@Log - \(dailyMovieData)")
                } else {
                    print("Decoding error / Unexpected data format")
                }
