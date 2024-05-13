@@ -56,12 +56,12 @@ class DailyMovieViewController: UIViewController, UICollectionViewDelegate {
         DailyMovieService.shared.getDailyMovie(key: key, targetDt: targetDt) { [weak self] response in
             switch response{
             case .success(let data):
-                print("@Log - \(data)")
+                // print("@Log - \(data)")
                 if let movieData = data as? DailyMovieResponse {
                     let dailyMovieData = movieData.boxOfficeResult.dailyBoxOfficeList.map {
                         DailyMovieInfo(rank: $0.rank, name: $0.movieNm, openDate: $0.openDt, audience: $0.audiAcc)
                     }
-                    self?.dailyMovieData = dailyMovieData
+                    self?.handleDailyMovieData(dailyMovieData)
                     print("@Log - \(dailyMovieData)")
                } else {
                    print("Decoding error / Unexpected data format")
@@ -79,10 +79,39 @@ class DailyMovieViewController: UIViewController, UICollectionViewDelegate {
             }
         }
     }
+    
+    func handleDailyMovieData(_ dailyMovieData: [DailyMovieInfo]) {
+        self.dailyMovieData = dailyMovieData
+        print(dailyMovieData)
+        collectionView.reloadData()
+    }
+}
+
+extension DailyMovieView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.width
+        let doubleCellWidth = screenWidth - movieInset.left - movieInset.right - movieInterItemSpacing
+        // print("@log - \(doubleCellWidth)")
+        return CGSize(width: doubleCellWidth / 2, height: 198)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return movieLineSpacing
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return movieInterItemSpacing
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return movieInset
+    }
 }
 
 extension DailyMovieViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // print("@log: hi \(dailyMovieData.count)")
+        // print("@log: hello \(dailyMovieData)")
         return dailyMovieData.count
     }
     

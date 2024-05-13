@@ -13,42 +13,10 @@ final class DailyMovieCollectionViewCell: UICollectionViewCell {
 
     var dailyMovieRow: Int?
     
-    private let rankingLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .systemPink
-        label.textAlignment = .center
-        label.font = UIFont(name: "Pretendard-Regular", size: 18)
-        return label
-    }()
-    
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .left
-        label.font = UIFont(name: "Pretendard-Bold", size: 15)
-        return label
-    }()
-    
-    private let openDateLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .left
-        label.font = UIFont(name: "Pretendard-Bold", size: 15)
-        return label
-    }()
-    
-    private let audienceLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.textAlignment = .left
-        label.font = UIFont(name: "Pretendard-Bold", size: 15)
-        return label
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .white
+        self.backgroundColor = .yellow
         setLayout()
     }
     
@@ -86,6 +54,38 @@ final class DailyMovieCollectionViewCell: UICollectionViewCell {
             $0.height.equalTo(30)
         }
     }
+    
+    private let rankingLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemPink
+        label.textAlignment = .center
+        label.font = UIFont(name: "Pretendard-Regular", size: 18)
+        return label
+    }()
+    
+    private let nameLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.textAlignment = .left
+        label.font = UIFont(name: "Pretendard-Bold", size: 15)
+        return label
+    }()
+    
+    private let openDateLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.textAlignment = .left
+        label.font = UIFont(name: "Pretendard-Bold", size: 15)
+        return label
+    }()
+    
+    private let audienceLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.textAlignment = .left
+        label.font = UIFont(name: "Pretendard-Bold", size: 15)
+        return label
+    }()
 }
 
 extension DailyMovieCollectionViewCell {

@@ -29,9 +29,10 @@ class DailyMovieView: UIView {
         return heightCount * cellHeight + (heightCount - 1) * movieLineSpacing + movieInset.top + movieInset.bottom
     }
     
-    let collectionView : UICollectionView = {
+    lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .green
         return collectionView
     }()
     
@@ -40,30 +41,9 @@ class DailyMovieView: UIView {
         collectionView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(self.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
-            $0.height.equalTo(calculateCellHeight())
         }
     }
 }
 
-
-extension DailyMovieView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenWidth = UIScreen.main.bounds.width
-        let doubleCellWidth = screenWidth - movieInset.left - movieInset.right - movieInterItemSpacing
-        return CGSize(width: doubleCellWidth / 2, height: 198)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return movieLineSpacing
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return movieInterItemSpacing
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return movieInset
-    }
-}
 
 

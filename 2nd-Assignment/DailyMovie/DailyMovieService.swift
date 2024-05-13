@@ -52,7 +52,7 @@ extension DailyMovieService {
                 let data = response.data
         
                 let networkResult = self.judgeStatus(by: statusCode, data, DailyMovieResponse.self)
-                print("@Log1 - \(networkResult)")
+                // print("@Log1 - \(networkResult)")
                 completion(networkResult)
             case .failure(_):
                 completion(.networkFail)
