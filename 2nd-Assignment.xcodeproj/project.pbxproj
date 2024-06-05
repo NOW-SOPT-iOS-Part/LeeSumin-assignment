@@ -153,10 +153,6 @@
 				743C8DC42BD40F570032B31C /* TabBarController.swift */,
 				74DD9BB32BE11B1900D580F2 /* FirstView */,
 				74DD9BB12BE11AB700D580F2 /* HomeView */,
-				74D0B5D02BDE6D380056A739 /* BannerCollectionView */,
-				74D0B5C92BDE488E0056A739 /* ChannelCollectionView */,
-				743C8DCF2BD503630032B31C /* SeriesCollectionView */,
-				743C8DC62BD423540032B31C /* PosterCollectionView */,
 				74DD9BB22BE11AE000D580F2 /* Extensions */,
 				7437D6BE2BCA48B000A5BE9F /* Assets.xcassets */,
 				7437D6BB2BCA48AF00A5BE9F /* Main.storyboard */,
@@ -202,52 +198,56 @@
 			path = DailyMovie;
 			sourceTree = "<group>";
 		};
-		743C8DC62BD423540032B31C /* PosterCollectionView */ = {
+		747B3EAD2C104F4900A26C23 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				743C8DC72BD4236B0032B31C /* PosterModel.swift */,
-				743C8DC92BD423870032B31C /* PosterCollectionViewCell.swift */,
+				747B3EAE2C104F6200A26C23 /* Cell */,
+				747B3EAF2C104F7300A26C23 /* ViewController */,
+				743C8DD82BD53CA90032B31C /* HeaderView.swift */,
+				74D0B5D12BDE6D600056A739 /* BannerCollectionView.swift */,
+				74D0B5CA2BDE49E10056A739 /* ChannelCollectionView.swift */,
+				743C8DCD2BD5035D0032B31C /* SeriesCollectionView.swift */,
+				743C8DD42BD506120032B31C /* SeriesCollectionHeaderView.swift */,
 				743C8DDA2BD53F550032B31C /* PosterCircleView.swift */,
 				743C8DCB2BD4271C0032B31C /* PosterCollectionView.swift */,
 			);
-			path = PosterCollectionView;
+			path = UI;
 			sourceTree = "<group>";
 		};
-		743C8DCF2BD503630032B31C /* SeriesCollectionView */ = {
+		747B3EAE2C104F6200A26C23 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				743C8DCD2BD5035D0032B31C /* SeriesCollectionView.swift */,
+				743C8DC92BD423870032B31C /* PosterCollectionViewCell.swift */,
 				743C8DD02BD504200032B31C /* SeriesCollectionViewCell.swift */,
-				743C8DD42BD506120032B31C /* SeriesCollectionHeaderView.swift */,
+				74D0B5CC2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift */,
+				74D0B5D32BDE6D6F0056A739 /* BannerCollectionViewCell.swift */,
 			);
-			path = SeriesCollectionView;
+			path = Cell;
 			sourceTree = "<group>";
 		};
-		74D0B5C92BDE488E0056A739 /* ChannelCollectionView */ = {
+		747B3EAF2C104F7300A26C23 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				74D0B5CA2BDE49E10056A739 /* ChannelCollectionView.swift */,
-				74D0B5CC2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift */,
+				743C8DBE2BD402AB0032B31C /* HomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		747B3EB02C104F8200A26C23 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				743C8DC72BD4236B0032B31C /* PosterModel.swift */,
+				74D0B5D52BDE6D7A0056A739 /* BannerModel.swift */,
 				74D0B5CE2BDE4BC70056A739 /* ChannelModel.swift */,
 			);
-			path = ChannelCollectionView;
-			sourceTree = "<group>";
-		};
-		74D0B5D02BDE6D380056A739 /* BannerCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				74D0B5D12BDE6D600056A739 /* BannerCollectionView.swift */,
-				74D0B5D32BDE6D6F0056A739 /* BannerCollectionViewCell.swift */,
-				74D0B5D52BDE6D7A0056A739 /* BannerModel.swift */,
-			);
-			path = BannerCollectionView;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		74DD9BB12BE11AB700D580F2 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				743C8DBE2BD402AB0032B31C /* HomeViewController.swift */,
-				743C8DD82BD53CA90032B31C /* HeaderView.swift */,
+				747B3EB02C104F8200A26C23 /* Domain */,
+				747B3EAD2C104F4900A26C23 /* UI */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
