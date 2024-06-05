@@ -18,6 +18,18 @@
 		7437D6CA2BCA574B00A5BE9F /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437D6C92BCA574B00A5BE9F /* NicknameViewController.swift */; };
 		7437D6CD2BCA60A500A5BE9F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7437D6CC2BCA60A500A5BE9F /* SnapKit */; };
 		7437D6CF2BCA60A500A5BE9F /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7437D6CE2BCA60A500A5BE9F /* SnapKit-Dynamic */; };
+		743881072BECB6B900CADB65 /* DailyMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743881062BECB6B900CADB65 /* DailyMovieService.swift */; };
+		7438810A2BECB6EA00CADB65 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 743881092BECB6EA00CADB65 /* CombineMoya */; };
+		7438810C2BECB6EA00CADB65 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 7438810B2BECB6EA00CADB65 /* Moya */; };
+		7438810E2BECB6EA00CADB65 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 7438810D2BECB6EA00CADB65 /* ReactiveMoya */; };
+		743881102BECB6EA00CADB65 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 7438810F2BECB6EA00CADB65 /* RxMoya */; };
+		743881122BECCC8700CADB65 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743881112BECCC8700CADB65 /* Config.swift */; };
+		743881142BECCC9800CADB65 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743881132BECCC9800CADB65 /* NetworkResult.swift */; };
+		743881192BECCEBD00CADB65 /* DailyMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743881182BECCEBD00CADB65 /* DailyMovieViewController.swift */; };
+		7438811B2BECD06600CADB65 /* MovieTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7438811A2BECD06600CADB65 /* MovieTargetType.swift */; };
+		7438811D2BECD41000CADB65 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7438811C2BECD41000CADB65 /* Date+Extensions.swift */; };
+		7438811F2BECD7F000CADB65 /* DailyMovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7438811E2BECD7F000CADB65 /* DailyMovieResponse.swift */; };
+		743881212BED7F3800CADB65 /* DailyMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743881202BED7F3800CADB65 /* DailyMovieModel.swift */; };
 		743C8DBF2BD402AB0032B31C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DBE2BD402AB0032B31C /* HomeViewController.swift */; };
 		743C8DC52BD40F570032B31C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DC42BD40F570032B31C /* TabBarController.swift */; };
 		743C8DC82BD4236B0032B31C /* PosterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DC72BD4236B0032B31C /* PosterModel.swift */; };
@@ -43,6 +55,9 @@
 		74D5B6572BCFF7FC0011FDBA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 74D5B6562BCFF7FC0011FDBA /* Pretendard-Bold.otf */; };
 		74D5B6592BD03D260011FDBA /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 74D5B6582BD03D260011FDBA /* Pretendard-Medium.otf */; };
 		74DD9BB02BE10C3800D580F2 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */; };
+		74F9F4072BEDE5F9009618FA /* DailyMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9F4062BEDE5F9009618FA /* DailyMovieView.swift */; };
+		74F9F4092BEDE898009618FA /* DailyMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9F4082BEDE898009618FA /* DailyMovieCollectionViewCell.swift */; };
+		74F9F40B2BEE2227009618FA /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9F40A2BEE2227009618FA /* MoyaLoggingPlugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +73,14 @@
 		7437D6C32BCA48B000A5BE9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7437D6C92BCA574B00A5BE9F /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		7437D6D12BCA6EFD00A5BE9F /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Regular.otf"; path = "../../../../../Downloads/Pretendard-1/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		743881062BECB6B900CADB65 /* DailyMovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieService.swift; sourceTree = "<group>"; };
+		743881112BECCC8700CADB65 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		743881132BECCC9800CADB65 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		743881182BECCEBD00CADB65 /* DailyMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieViewController.swift; sourceTree = "<group>"; };
+		7438811A2BECD06600CADB65 /* MovieTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTargetType.swift; sourceTree = "<group>"; };
+		7438811C2BECD41000CADB65 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		7438811E2BECD7F000CADB65 /* DailyMovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieResponse.swift; sourceTree = "<group>"; };
+		743881202BED7F3800CADB65 /* DailyMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieModel.swift; sourceTree = "<group>"; };
 		743C8DBE2BD402AB0032B31C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		743C8DC42BD40F570032B31C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		743C8DC72BD4236B0032B31C /* PosterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterModel.swift; sourceTree = "<group>"; };
@@ -82,6 +105,9 @@
 		74D5B6562BCFF7FC0011FDBA /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		74D5B6582BD03D260011FDBA /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		74F9F4062BEDE5F9009618FA /* DailyMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieView.swift; sourceTree = "<group>"; };
+		74F9F4082BEDE898009618FA /* DailyMovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		74F9F40A2BEE2227009618FA /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +115,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				743881102BECB6EA00CADB65 /* RxMoya in Frameworks */,
 				7437D6CD2BCA60A500A5BE9F /* SnapKit in Frameworks */,
 				7437D6CF2BCA60A500A5BE9F /* SnapKit-Dynamic in Frameworks */,
+				7438810C2BECB6EA00CADB65 /* Moya in Frameworks */,
+				7438810E2BECB6EA00CADB65 /* ReactiveMoya in Frameworks */,
+				7438810A2BECB6EA00CADB65 /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +146,8 @@
 		7437D6B42BCA48AF00A5BE9F /* 2nd-Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				743881172BECCDA000CADB65 /* DailyMovie */,
+				743881052BECB64B00CADB65 /* Network */,
 				7437D6B52BCA48AF00A5BE9F /* AppDelegate.swift */,
 				7437D6B72BCA48AF00A5BE9F /* SceneDelegate.swift */,
 				743C8DC42BD40F570032B31C /* TabBarController.swift */,
@@ -144,6 +176,30 @@
 				747EC3292BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		743881052BECB64B00CADB65 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				743881112BECCC8700CADB65 /* Config.swift */,
+				74F9F40A2BEE2227009618FA /* MoyaLoggingPlugin.swift */,
+				743881132BECCC9800CADB65 /* NetworkResult.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		743881172BECCDA000CADB65 /* DailyMovie */ = {
+			isa = PBXGroup;
+			children = (
+				743881062BECB6B900CADB65 /* DailyMovieService.swift */,
+				743881202BED7F3800CADB65 /* DailyMovieModel.swift */,
+				7438811A2BECD06600CADB65 /* MovieTargetType.swift */,
+				7438811E2BECD7F000CADB65 /* DailyMovieResponse.swift */,
+				743881182BECCEBD00CADB65 /* DailyMovieViewController.swift */,
+				74F9F4082BEDE898009618FA /* DailyMovieCollectionViewCell.swift */,
+				74F9F4062BEDE5F9009618FA /* DailyMovieView.swift */,
+			);
+			path = DailyMovie;
 			sourceTree = "<group>";
 		};
 		743C8DC62BD423540032B31C /* PosterCollectionView */ = {
@@ -201,6 +257,7 @@
 			children = (
 				74D5B6522BCFB1100011FDBA /* UITextField+Extensions.swift */,
 				740AB84F2BEC805A0034B0E4 /* UICollectionView+Extensions.swift */,
+				7438811C2BECD41000CADB65 /* Date+Extensions.swift */,
 				740AB84D2BEC7E1C0034B0E4 /* UIView+Extensions.swift */,
 				743C8DD62BD539100032B31C /* UIImage+Extensions.swift */,
 				74DD9BAF2BE10C3800D580F2 /* UILabel+Extensions.swift */,
@@ -238,6 +295,10 @@
 			packageProductDependencies = (
 				7437D6CC2BCA60A500A5BE9F /* SnapKit */,
 				7437D6CE2BCA60A500A5BE9F /* SnapKit-Dynamic */,
+				743881092BECB6EA00CADB65 /* CombineMoya */,
+				7438810B2BECB6EA00CADB65 /* Moya */,
+				7438810D2BECB6EA00CADB65 /* ReactiveMoya */,
+				7438810F2BECB6EA00CADB65 /* RxMoya */,
 			);
 			productName = "2nd-Assignment";
 			productReference = 7437D6B22BCA48AF00A5BE9F /* 2nd-Assignment.app */;
@@ -269,6 +330,7 @@
 			mainGroup = 7437D6A92BCA48AF00A5BE9F;
 			packageReferences = (
 				7437D6CB2BCA60A500A5BE9F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				743881082BECB6EA00CADB65 /* XCRemoteSwiftPackageReference "moya" */,
 			);
 			productRefGroup = 7437D6B32BCA48AF00A5BE9F /* Products */;
 			projectDirPath = "";
@@ -307,21 +369,32 @@
 				74D0B5D62BDE6D7A0056A739 /* BannerModel.swift in Sources */,
 				7437D6CA2BCA574B00A5BE9F /* NicknameViewController.swift in Sources */,
 				74D5B64F2BCFA0660011FDBA /* SheetLayout.swift in Sources */,
+				743881072BECB6B900CADB65 /* DailyMovieService.swift in Sources */,
 				74DD9BB02BE10C3800D580F2 /* UILabel+Extensions.swift in Sources */,
 				74D0B5D22BDE6D600056A739 /* BannerCollectionView.swift in Sources */,
 				743C8DD52BD506120032B31C /* SeriesCollectionHeaderView.swift in Sources */,
 				7437D6BA2BCA48AF00A5BE9F /* LoginViewController.swift in Sources */,
+				743881192BECCEBD00CADB65 /* DailyMovieViewController.swift in Sources */,
+				7438811B2BECD06600CADB65 /* MovieTargetType.swift in Sources */,
 				743C8DD92BD53CA90032B31C /* HeaderView.swift in Sources */,
 				74D5B6532BCFB1100011FDBA /* UITextField+Extensions.swift in Sources */,
 				7437D6B62BCA48AF00A5BE9F /* AppDelegate.swift in Sources */,
 				74D0B5CB2BDE49E10056A739 /* ChannelCollectionView.swift in Sources */,
+				74F9F4092BEDE898009618FA /* DailyMovieCollectionViewCell.swift in Sources */,
 				743C8DCE2BD5035D0032B31C /* SeriesCollectionView.swift in Sources */,
 				7437D6B82BCA48AF00A5BE9F /* SceneDelegate.swift in Sources */,
 				74D5B6552BCFF4770011FDBA /* WelcomeViewController.swift in Sources */,
 				74D0B5CF2BDE4BC70056A739 /* ChannelModel.swift in Sources */,
+				74F9F4072BEDE5F9009618FA /* DailyMovieView.swift in Sources */,
+				7438811F2BECD7F000CADB65 /* DailyMovieResponse.swift in Sources */,
+				74F9F40B2BEE2227009618FA /* MoyaLoggingPlugin.swift in Sources */,
 				740AB84E2BEC7E1C0034B0E4 /* UIView+Extensions.swift in Sources */,
 				743C8DCA2BD423870032B31C /* PosterCollectionViewCell.swift in Sources */,
+				743881142BECCC9800CADB65 /* NetworkResult.swift in Sources */,
+				743881212BED7F3800CADB65 /* DailyMovieModel.swift in Sources */,
 				74D0B5CD2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift in Sources */,
+				7438811D2BECD41000CADB65 /* Date+Extensions.swift in Sources */,
+				743881122BECCC8700CADB65 /* Config.swift in Sources */,
 				743C8DC52BD40F570032B31C /* TabBarController.swift in Sources */,
 				743C8DBF2BD402AB0032B31C /* HomeViewController.swift in Sources */,
 				740AB8502BEC805A0034B0E4 /* UICollectionView+Extensions.swift in Sources */,
@@ -477,6 +550,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H4NCX3RT8V;
@@ -505,6 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H4NCX3RT8V;
@@ -560,6 +635,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		743881082BECB6EA00CADB65 /* XCRemoteSwiftPackageReference "moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/moya/moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -572,6 +655,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7437D6CB2BCA60A500A5BE9F /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
+		};
+		743881092BECB6EA00CADB65 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 743881082BECB6EA00CADB65 /* XCRemoteSwiftPackageReference "moya" */;
+			productName = CombineMoya;
+		};
+		7438810B2BECB6EA00CADB65 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 743881082BECB6EA00CADB65 /* XCRemoteSwiftPackageReference "moya" */;
+			productName = Moya;
+		};
+		7438810D2BECB6EA00CADB65 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 743881082BECB6EA00CADB65 /* XCRemoteSwiftPackageReference "moya" */;
+			productName = ReactiveMoya;
+		};
+		7438810F2BECB6EA00CADB65 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 743881082BECB6EA00CADB65 /* XCRemoteSwiftPackageReference "moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
