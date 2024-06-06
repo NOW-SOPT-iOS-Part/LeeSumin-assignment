@@ -28,7 +28,7 @@
 		743881192BECCEBD00CADB65 /* DailyMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743881182BECCEBD00CADB65 /* DailyMovieViewController.swift */; };
 		7438811B2BECD06600CADB65 /* MovieTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7438811A2BECD06600CADB65 /* MovieTargetType.swift */; };
 		7438811D2BECD41000CADB65 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7438811C2BECD41000CADB65 /* Date+Extensions.swift */; };
-		7438811F2BECD7F000CADB65 /* DailyMovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7438811E2BECD7F000CADB65 /* DailyMovieResponse.swift */; };
+		7438811F2BECD7F000CADB65 /* DailyMovieDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7438811E2BECD7F000CADB65 /* DailyMovieDTO.swift */; };
 		743881212BED7F3800CADB65 /* DailyMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743881202BED7F3800CADB65 /* DailyMovieModel.swift */; };
 		743C8DBF2BD402AB0032B31C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DBE2BD402AB0032B31C /* HomeViewController.swift */; };
 		743C8DC52BD40F570032B31C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DC42BD40F570032B31C /* TabBarController.swift */; };
@@ -80,7 +80,7 @@
 		743881182BECCEBD00CADB65 /* DailyMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieViewController.swift; sourceTree = "<group>"; };
 		7438811A2BECD06600CADB65 /* MovieTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTargetType.swift; sourceTree = "<group>"; };
 		7438811C2BECD41000CADB65 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		7438811E2BECD7F000CADB65 /* DailyMovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieResponse.swift; sourceTree = "<group>"; };
+		7438811E2BECD7F000CADB65 /* DailyMovieDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieDTO.swift; sourceTree = "<group>"; };
 		743881202BED7F3800CADB65 /* DailyMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieModel.swift; sourceTree = "<group>"; };
 		743C8DBE2BD402AB0032B31C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		743C8DC42BD40F570032B31C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -175,8 +175,7 @@
 		7417515B2C123730009DBA58 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				7438811A2BECD06600CADB65 /* MovieTargetType.swift */,
-				7438811E2BECD7F000CADB65 /* DailyMovieResponse.swift */,
+				743881202BED7F3800CADB65 /* DailyMovieModel.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -186,6 +185,32 @@
 			children = (
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		7417515D2C123DD2009DBA58 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				7417515F2C123E2C009DBA58 /* TargetType */,
+				7417515E2C123E1A009DBA58 /* DTO */,
+				741751562C1236DC009DBA58 /* Service */,
+			);
+			path = Infra;
+			sourceTree = "<group>";
+		};
+		7417515E2C123E1A009DBA58 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				7438811E2BECD7F000CADB65 /* DailyMovieDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		7417515F2C123E2C009DBA58 /* TargetType */ = {
+			isa = PBXGroup;
+			children = (
+				7438811A2BECD06600CADB65 /* MovieTargetType.swift */,
+			);
+			path = TargetType;
 			sourceTree = "<group>";
 		};
 		7437D6A92BCA48AF00A5BE9F = {
@@ -207,6 +232,7 @@
 		7437D6B42BCA48AF00A5BE9F /* 2nd-Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				7417515D2C123DD2009DBA58 /* Infra */,
 				743881172BECCDA000CADB65 /* DailyMovie */,
 				743881052BECB64B00CADB65 /* Network */,
 				7437D6B52BCA48AF00A5BE9F /* AppDelegate.swift */,
@@ -248,8 +274,6 @@
 		743881172BECCDA000CADB65 /* DailyMovie */ = {
 			isa = PBXGroup;
 			children = (
-				743881202BED7F3800CADB65 /* DailyMovieModel.swift */,
-				741751562C1236DC009DBA58 /* Service */,
 				7417515A2C12370D009DBA58 /* BusinessLogic */,
 				741751572C1236E8009DBA58 /* UI */,
 			);
@@ -453,7 +477,7 @@
 				74D5B6552BCFF4770011FDBA /* WelcomeViewController.swift in Sources */,
 				74D0B5CF2BDE4BC70056A739 /* ChannelModel.swift in Sources */,
 				74F9F4072BEDE5F9009618FA /* DailyMovieView.swift in Sources */,
-				7438811F2BECD7F000CADB65 /* DailyMovieResponse.swift in Sources */,
+				7438811F2BECD7F000CADB65 /* DailyMovieDTO.swift in Sources */,
 				74F9F40B2BEE2227009618FA /* MoyaLoggingPlugin.swift in Sources */,
 				740AB84E2BEC7E1C0034B0E4 /* UIView+Extensions.swift in Sources */,
 				743C8DCA2BD423870032B31C /* PosterCollectionViewCell.swift in Sources */,

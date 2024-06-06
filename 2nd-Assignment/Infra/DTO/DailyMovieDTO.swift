@@ -1,5 +1,5 @@
 //
-//  DailyMovieResponseModel.swift
+//  DailyMovieDTO.swift
 //  2nd-Assignment
 //
 //  Created by 이수민 on 5/9/24.
