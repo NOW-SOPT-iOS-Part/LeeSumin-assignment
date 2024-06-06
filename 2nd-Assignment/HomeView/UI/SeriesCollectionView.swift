@@ -40,7 +40,7 @@ class SeriesCollectionView: UICollectionView{
         self.dataSource = self
     }
     
-    private var seriesData = PosterModel.posterDummy {
+    private var seriesData = HomeViewModel().posterDummy {
        didSet {
            self.reloadData()
        }

@@ -40,7 +40,7 @@ class ChannelCollectionView: UICollectionView{
         self.dataSource = self
     }
     
-    private var channelData = ChannelModel.channelDummy {
+    private var channelData = HomeViewModel().channelDummy {
        didSet {
            self.reloadData()
        }

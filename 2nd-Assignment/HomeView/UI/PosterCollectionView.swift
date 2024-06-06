@@ -28,14 +28,12 @@ class PosterCollectionView: UICollectionView{
         )
     }
     
-    let homeVC = HomeViewController()
-    
     private func setDelegate(){
         self.delegate = self
         self.dataSource = self
     }
     
-    private var posterData = PosterModel.posterDummy {
+    private var posterData = HomeViewModel().posterDummy {
        didSet {
            self.reloadData()
        }

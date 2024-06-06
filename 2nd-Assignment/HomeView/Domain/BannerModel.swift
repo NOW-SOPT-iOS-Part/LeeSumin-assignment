@@ -9,14 +9,4 @@ import UIKit
 
 struct BannerModel{
     let bannerImg : UIImage
-    
-}
-
-extension BannerModel{
-    static let bannerDummy = [
-        BannerModel(bannerImg: .doosanWhite),
-        BannerModel(bannerImg: .doosanBlack),
-        BannerModel(bannerImg: .doosanWhite),
-        BannerModel(bannerImg: .doosanBlack)
-    ]
 }

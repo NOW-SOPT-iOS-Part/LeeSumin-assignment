@@ -42,6 +42,7 @@
 		743C8DD92BD53CA90032B31C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DD82BD53CA90032B31C /* HeaderView.swift */; };
 		743C8DDB2BD53F550032B31C /* PosterCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C8DDA2BD53F550032B31C /* PosterCircleView.swift */; };
 		7461A6182BCF935B005CF27B /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7437D6D12BCA6EFD00A5BE9F /* Pretendard-Regular.otf */; };
+		747B3EB32C10578400A26C23 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B3EB22C10578400A26C23 /* HomeViewModel.swift */; };
 		747EC32A2BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 747EC3292BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf */; };
 		74D0B5CB2BDE49E10056A739 /* ChannelCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0B5CA2BDE49E10056A739 /* ChannelCollectionView.swift */; };
 		74D0B5CD2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D0B5CC2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift */; };
@@ -92,6 +93,7 @@
 		743C8DD62BD539100032B31C /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		743C8DD82BD53CA90032B31C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		743C8DDA2BD53F550032B31C /* PosterCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCircleView.swift; sourceTree = "<group>"; };
+		747B3EB22C10578400A26C23 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		747EC3292BCE5AAE004D2AD9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "../../../../../Downloads/Pretendard-1/public/static/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		74D0B5CA2BDE49E10056A739 /* ChannelCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionView.swift; sourceTree = "<group>"; };
 		74D0B5CC2BDE4A0B0056A739 /* ChannelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -243,9 +245,18 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		747B3EB12C10576B00A26C23 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				747B3EB22C10578400A26C23 /* HomeViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		74DD9BB12BE11AB700D580F2 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				747B3EB12C10576B00A26C23 /* Presentation */,
 				747B3EB02C104F8200A26C23 /* Domain */,
 				747B3EAD2C104F4900A26C23 /* UI */,
 			);
@@ -397,6 +408,7 @@
 				743881122BECCC8700CADB65 /* Config.swift in Sources */,
 				743C8DC52BD40F570032B31C /* TabBarController.swift in Sources */,
 				743C8DBF2BD402AB0032B31C /* HomeViewController.swift in Sources */,
+				747B3EB32C10578400A26C23 /* HomeViewModel.swift in Sources */,
 				740AB8502BEC805A0034B0E4 /* UICollectionView+Extensions.swift in Sources */,
 				743C8DDB2BD53F550032B31C /* PosterCircleView.swift in Sources */,
 				743C8DCC2BD4271C0032B31C /* PosterCollectionView.swift in Sources */,
