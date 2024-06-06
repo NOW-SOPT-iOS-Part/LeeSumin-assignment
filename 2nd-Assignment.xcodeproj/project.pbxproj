@@ -129,6 +129,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		741751562C1236DC009DBA58 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				743881062BECB6B900CADB65 /* DailyMovieService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		741751572C1236E8009DBA58 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				741751592C1236FC009DBA58 /* ViewController */,
+				741751582C1236F6009DBA58 /* Cell */,
+				74F9F4062BEDE5F9009618FA /* DailyMovieView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		741751582C1236F6009DBA58 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				74F9F4082BEDE898009618FA /* DailyMovieCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		741751592C1236FC009DBA58 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				743881182BECCEBD00CADB65 /* DailyMovieViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7417515A2C12370D009DBA58 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				7417515C2C1237F5009DBA58 /* Application */,
+				7417515B2C123730009DBA58 /* Domain */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		7417515B2C123730009DBA58 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7438811A2BECD06600CADB65 /* MovieTargetType.swift */,
+				7438811E2BECD7F000CADB65 /* DailyMovieResponse.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7417515C2C1237F5009DBA58 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		7437D6A92BCA48AF00A5BE9F = {
 			isa = PBXGroup;
 			children = (
@@ -189,13 +248,10 @@
 		743881172BECCDA000CADB65 /* DailyMovie */ = {
 			isa = PBXGroup;
 			children = (
-				743881062BECB6B900CADB65 /* DailyMovieService.swift */,
 				743881202BED7F3800CADB65 /* DailyMovieModel.swift */,
-				7438811A2BECD06600CADB65 /* MovieTargetType.swift */,
-				7438811E2BECD7F000CADB65 /* DailyMovieResponse.swift */,
-				743881182BECCEBD00CADB65 /* DailyMovieViewController.swift */,
-				74F9F4082BEDE898009618FA /* DailyMovieCollectionViewCell.swift */,
-				74F9F4062BEDE5F9009618FA /* DailyMovieView.swift */,
+				741751562C1236DC009DBA58 /* Service */,
+				7417515A2C12370D009DBA58 /* BusinessLogic */,
+				741751572C1236E8009DBA58 /* UI */,
 			);
 			path = DailyMovie;
 			sourceTree = "<group>";
