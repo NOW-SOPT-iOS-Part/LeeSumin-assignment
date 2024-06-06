@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct DailyMovieResponse: Codable {
-     let boxOfficeResult: BoxOfficeResult
+struct DailyMovieDto: Codable {
+     let boxOfficeResult: BoxOfficeResultDto
  }
 
- struct BoxOfficeResult: Codable {
+ struct BoxOfficeResultDto: Codable {
      let boxofficeType: String
      let showRange: String
-     let dailyBoxOfficeList: [DailyBoxOffice]
+     let dailyBoxOfficeList: [DailyBoxOfficeDto]
  }
 
-struct DailyBoxOffice: Codable {
+struct DailyBoxOfficeDto: Codable {
     let rnum: String
     let rank: String
     let rankInten: String

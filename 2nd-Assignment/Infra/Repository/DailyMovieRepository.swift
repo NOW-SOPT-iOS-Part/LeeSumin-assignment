@@ -6,7 +6,7 @@
 //
 
 protocol DailyMovieRepositoryProtocol {
-    func getDailyMovie(key: String, targetDt: String, completion: @escaping (NetworkResult<Any>) -> Void)
+    func getDailyMovie(key: String, targetDt: String, completion: @escaping (NetworkResult<DailyMovieDto>) -> Void)
 }
 
 class DailyMovieRepository: DailyMovieRepositoryProtocol {
@@ -14,7 +14,7 @@ class DailyMovieRepository: DailyMovieRepositoryProtocol {
     init(service: DailyMovieService) {
         self.service = service
     }
-    func getDailyMovie(key: String, targetDt: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getDailyMovie(key: String, targetDt: String, completion: @escaping (NetworkResult<DailyMovieDto>) -> Void) {
         service.getDailyMovie(key: key, targetDt: targetDt, completion: completion)
     }
 }
