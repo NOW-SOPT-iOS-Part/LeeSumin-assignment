@@ -12,6 +12,7 @@
 		741751622C123EF3009DBA58 /* DailyMovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741751612C123EF3009DBA58 /* DailyMovieRepository.swift */; };
 		741751642C1240FE009DBA58 /* DailyMovieUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741751632C1240FE009DBA58 /* DailyMovieUseCase.swift */; };
 		741751672C124657009DBA58 /* DailyMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741751662C124657009DBA58 /* DailyMovieViewModel.swift */; };
+		741751692C124AA3009DBA58 /* ObservablePattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741751682C124AA3009DBA58 /* ObservablePattern.swift */; };
 		7437D6B62BCA48AF00A5BE9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437D6B52BCA48AF00A5BE9F /* AppDelegate.swift */; };
 		7437D6B82BCA48AF00A5BE9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437D6B72BCA48AF00A5BE9F /* SceneDelegate.swift */; };
 		7437D6BA2BCA48AF00A5BE9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7437D6B92BCA48AF00A5BE9F /* LoginViewController.swift */; };
@@ -70,6 +71,7 @@
 		741751612C123EF3009DBA58 /* DailyMovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieRepository.swift; sourceTree = "<group>"; };
 		741751632C1240FE009DBA58 /* DailyMovieUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieUseCase.swift; sourceTree = "<group>"; };
 		741751662C124657009DBA58 /* DailyMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMovieViewModel.swift; sourceTree = "<group>"; };
+		741751682C124AA3009DBA58 /* ObservablePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservablePattern.swift; sourceTree = "<group>"; };
 		7437D6B22BCA48AF00A5BE9F /* 2nd-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "2nd-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7437D6B52BCA48AF00A5BE9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7437D6B72BCA48AF00A5BE9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				743881172BECCDA000CADB65 /* DailyMovie */,
 				743881052BECB64B00CADB65 /* Network */,
 				7437D6B52BCA48AF00A5BE9F /* AppDelegate.swift */,
+				741751682C124AA3009DBA58 /* ObservablePattern.swift */,
 				7437D6B72BCA48AF00A5BE9F /* SceneDelegate.swift */,
 				743C8DC42BD40F570032B31C /* TabBarController.swift */,
 				74DD9BB32BE11B1900D580F2 /* FirstView */,
@@ -481,6 +484,7 @@
 			files = (
 				743C8DC82BD4236B0032B31C /* PosterModel.swift in Sources */,
 				743C8DD12BD504200032B31C /* SeriesCollectionViewCell.swift in Sources */,
+				741751692C124AA3009DBA58 /* ObservablePattern.swift in Sources */,
 				74D0B5D42BDE6D6F0056A739 /* BannerCollectionViewCell.swift in Sources */,
 				74D0B5D62BDE6D7A0056A739 /* BannerModel.swift in Sources */,
 				7437D6CA2BCA574B00A5BE9F /* NicknameViewController.swift in Sources */,
