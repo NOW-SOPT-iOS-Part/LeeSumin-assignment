@@ -15,12 +15,16 @@ class DailyMovieViewController: UIViewController, UICollectionViewDelegate {
     private let viewModel: DailyMovieViewModel
     private var collectionView: UICollectionView
     
-    private var dailyMovieData: [DailyMovieInfo] = []
+    private var dailyMovieInfo: [DailyMovieInfo] = []
    
     override func viewDidLoad() {
         super.viewDidLoad()
         register()
         setCollectionView()
+        dailyMovieInfo = viewModel.dailyMovieInfo.value!
+        viewModel.dailyMovieInfo.bind { [weak self] movies in
+            self?.handleDailyMovieInfo(dailyMovieInfo: movies)
+        }
     }
     
     init(rootView: DailyMovieView, viewModel: DailyMovieViewModel) {
@@ -51,9 +55,8 @@ class DailyMovieViewController: UIViewController, UICollectionViewDelegate {
         )
     }
     
-    func handleDailyMovieData(_ dailyMovieData: [DailyMovieInfo]) {
-        self.dailyMovieData = dailyMovieData
-        print(dailyMovieData)
+    func handleDailyMovieInfo(dailyMovieInfo: [DailyMovieInfo]!) {
+        self.dailyMovieInfo = dailyMovieInfo
         collectionView.reloadData()
     }
 }
@@ -80,14 +83,12 @@ extension DailyMovieViewController: UICollectionViewDelegateFlowLayout {
 
 extension DailyMovieViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // print("@log: hi \(dailyMovieData.count)")
-        // print("@log: hello \(dailyMovieData)")
-        return dailyMovieData.count
+        return dailyMovieInfo.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DailyMovieCollectionViewCell.identifier, for: indexPath) as? DailyMovieCollectionViewCell else { return UICollectionViewCell() }
-        cell.dataBind(dailyMovieData[indexPath.item], dailyMovieRow: indexPath.item)
+        cell.dataBind(dailyMovieInfo[indexPath.item], dailyMovieRow: indexPath.item)
         return cell
     }
 }

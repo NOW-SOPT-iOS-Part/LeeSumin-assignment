@@ -18,7 +18,13 @@ class TabBarController: UITabBarController {
     }
     
     private let homeViewController = UINavigationController(rootViewController: HomeViewController())
-    private let dailyMovieViewController = UINavigationController(rootViewController: DailyMovieViewController())
+    private let dailyMovieViewController: UINavigationController = {
+        let rootView = DailyMovieView() // DailyMovieView 초기화
+        let dailyMovieRepository = DailyMovieRepository(service: DailyMovieService.shared)
+        let viewModel = DailyMovieViewModel(useCase: DailyMovieUseCase(repository: dailyMovieRepository))
+        let dailyVC = DailyMovieViewController(rootView: rootView, viewModel: viewModel)
+        return UINavigationController(rootViewController: dailyVC)
+    }()
     
     private func setVC(){
         self.setViewControllers([homeViewController, dailyMovieViewController], animated: true)

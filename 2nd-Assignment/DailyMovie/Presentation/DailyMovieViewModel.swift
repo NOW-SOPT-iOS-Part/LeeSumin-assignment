@@ -11,10 +11,11 @@ class DailyMovieViewModel {
     private let useCase : DailyMovieUseCase
     private let key = "95dd7589a2ca8b8126c77eabf642771a"
     private let targetDt = "20240510" // Date.movieDate()
-    var dailyMovieInfo : [DailyMovieInfo] = []
+    var dailyMovieInfo : ObservablePattern<[DailyMovieInfo]> = ObservablePattern([])
     
     init(useCase: DailyMovieUseCase) {
         self.useCase = useCase
+        setData(key: key, targetDt: targetDt)
     }
     
     func setData(key: String, targetDt: String) {
@@ -24,7 +25,7 @@ class DailyMovieViewModel {
                 let dailyMovieData = data.boxOfficeResult.dailyBoxOfficeList.map {
                     DailyMovieInfo(rank: $0.rank, name: $0.movieNm, openDate: $0.openDt, audience: $0.audiAcc)
                 }
-                self?.handleDailyMovieData(data: dailyMovieData)
+                self?.dailyMovieInfo.value = dailyMovieData
                 print("@Log - \(dailyMovieData)")
             case .decodedErr:
                 print("decoding error")
@@ -39,9 +40,4 @@ class DailyMovieViewModel {
             }
         }
     }
-    
-    func handleDailyMovieData(data: [DailyMovieInfo]) {
-        self.dailyMovieInfo = data
-    }
-
 }
