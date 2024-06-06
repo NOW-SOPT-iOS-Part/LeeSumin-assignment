@@ -18,14 +18,19 @@ class TabBarController: UITabBarController {
     }
     
     private let homeViewController = UINavigationController(rootViewController: HomeViewController())
+    private let dailyMovieViewController = UINavigationController(rootViewController: DailyMovieViewController())
     
     private func setVC(){
-        self.setViewControllers([homeViewController], animated: true)
+        self.setViewControllers([homeViewController, dailyMovieViewController], animated: true)
         
         if let items = self.tabBar.items{
             items[0].title = "홈"
             items[0].image = UIImage(systemName: "house")
-            items[0].selectedImage = UIImage(systemName: "house.fill")?.withRenderingMode(.alwaysTemplate).withTintColor(.white) //왜 하얀색 안 되지
+            items[0].selectedImage = UIImage(systemName: "house.fill")?.withRenderingMode(.alwaysTemplate).withTintColor(.white)
+            
+            items[1].title = "오늘의 영화"
+            items[1].image = UIImage(systemName: "popcorn")
+            items[1].selectedImage = UIImage(systemName: "popcorn.fill")?.withRenderingMode(.alwaysTemplate).withTintColor(.white)
         }
         
     }
