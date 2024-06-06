@@ -16,7 +16,7 @@ final class DailyMovieCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .systemCyan
+        self.backgroundColor = .gray4
         self.layer.cornerRadius = 10
         setLayout()
     }
@@ -58,33 +58,33 @@ final class DailyMovieCollectionViewCell: UICollectionViewCell {
     
     private let rankingLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .systemBlue
+        label.textColor = .lightPink
         label.textAlignment = .center
-        label.font = UIFont(name: "Pretendard-Regular", size: 36)
+        label.font = UIFont(name: "Pretendard-Bold", size: 36)
         return label
     }()
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont(name: "Pretendard-Bold", size: 15)
+        label.font = UIFont(name: "Pretendard-Bold", size: 12)
         return label
     }()
     
     private let openDateLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont(name: "Pretendard-Bold", size: 15)
+        label.font = UIFont(name: "Pretendard-Bold", size: 12)
         return label
     }()
     
     private let audienceLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont(name: "Pretendard-Bold", size: 15)
+        label.font = UIFont(name: "Pretendard-Bold", size: 12)
         return label
     }()
 }
@@ -94,7 +94,7 @@ extension DailyMovieCollectionViewCell {
         rankingLabel.text = dailyMovieData.rank
         nameLabel.text = dailyMovieData.name
         openDateLabel.text = dailyMovieData.openDate
-        audienceLabel.text = dailyMovieData.audience
+        audienceLabel.text = "누적 관객수 : " + dailyMovieData.audience
         self.dailyMovieRow = dailyMovieRow
     }
 }

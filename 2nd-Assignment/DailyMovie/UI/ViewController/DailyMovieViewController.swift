@@ -21,7 +21,6 @@ class DailyMovieViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         register()
         setCollectionView()
-        dailyMovieInfo = viewModel.dailyMovieInfo.value!
         viewModel.dailyMovieInfo.bind { [weak self] movies in
             self?.handleDailyMovieInfo(dailyMovieInfo: movies)
         }
