@@ -8,7 +8,8 @@
 import UIKit
 
 class BannerCollectionView: UICollectionView{
-    private var viewModel : HomeViewModel!
+    private var viewModel: HomeViewModel!
+    private var bannerData: [BannerModel] = [] 
     
     init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout, viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -17,7 +18,7 @@ class BannerCollectionView: UICollectionView{
         self.backgroundColor = .black
         register()
         setDelegate()
-        
+        setUpBindings()
     }
     
     required init?(coder: NSCoder) {
@@ -36,11 +37,9 @@ class BannerCollectionView: UICollectionView{
         self.dataSource = self
     }
     
-    private var bannerData = HomeViewModel().bannerDummy {
-       didSet {
-           self.reloadData()
-       }
-   }
+    private func setUpBindings() {
+        self.bannerData = viewModel.bannerDummy
+    }
 }
 
 extension BannerCollectionView : UICollectionViewDelegateFlowLayout {

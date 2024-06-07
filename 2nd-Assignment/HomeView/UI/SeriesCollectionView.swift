@@ -8,13 +8,17 @@
 import UIKit
 
 class SeriesCollectionView: UICollectionView{
-
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+    private var viewModel: HomeViewModel!
+    private var seriesData: [PosterModel] = []
+    
+    init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout, viewModel: HomeViewModel) {
+        self.viewModel = viewModel
         let flowLayout = SeriesCollectionView.horizontalFlowLayout()
         super.init(frame: frame, collectionViewLayout: flowLayout)
         self.backgroundColor = .black
         register()
         setDelegate()
+        setupBindings()
     }
     
     required init?(coder: NSCoder) {
@@ -40,11 +44,10 @@ class SeriesCollectionView: UICollectionView{
         self.dataSource = self
     }
     
-    private var seriesData = HomeViewModel().posterDummy {
-       didSet {
-           self.reloadData()
-       }
-   }
+    private func setupBindings() {
+        self.seriesData = viewModel.posterDummy
+    }
+
 }
 
 extension SeriesCollectionView : UICollectionViewDelegateFlowLayout {

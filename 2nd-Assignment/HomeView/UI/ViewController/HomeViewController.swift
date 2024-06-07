@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 class HomeViewController: UIViewController {
+    let viewModel = HomeViewModel()
     var topInset : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,21 +155,21 @@ class HomeViewController: UIViewController {
     
     private lazy var headerView : UIStackView  = HeaderView()
     private lazy var posterCircleView : UIStackView  = PosterCircleView()
-    private lazy var posterView : UICollectionView  = PosterCollectionView()
+    private lazy var posterView : UICollectionView  = PosterCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout(), viewModel: HomeViewModel())
     
     private lazy var tvingEssentialHeaderView : UIView = {
         let headerView = SeriesCollectionHeaderView()
         headerView.configure(withTitle: "티빙에서 꼭 봐야하는 콘텐츠")
         return headerView
     }()
-    private lazy var tvingEssentialCollectionView : UICollectionView = SeriesCollectionView()
+    private lazy var tvingEssentialCollectionView : UICollectionView = SeriesCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout(), viewModel: HomeViewModel())
     
     private lazy var topChannelHeaderView: UIView = {
         let headerView = SeriesCollectionHeaderView()
         headerView.configure(withTitle: "인기 LIVE 채널")
         return headerView
     }()
-    private lazy var topChannelCollectionView : UICollectionView = ChannelCollectionView()
+    private lazy var topChannelCollectionView : UICollectionView = ChannelCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout(), viewModel: HomeViewModel())
 
     
     private lazy var paramountContentHeaderView: UIView = {
@@ -176,7 +177,7 @@ class HomeViewController: UIViewController {
         headerView.configure(withTitle: "1화 무료! 파라마운트+ 인기 시리즈")
         return headerView
     }()
-    private lazy var paramountContentCollectionView : UICollectionView = SeriesCollectionView()
+    private lazy var paramountContentCollectionView : UICollectionView = SeriesCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout(), viewModel: HomeViewModel())
     
    
     private lazy var bannerCollectionView : UICollectionView = BannerCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout(), viewModel: HomeViewModel())
@@ -186,6 +187,6 @@ class HomeViewController: UIViewController {
         headerView.configure(withTitle: "마술보다 더 신비로운 영화(신비로운 영화사전님)")
         return headerView
     }()
-    private lazy var movieCollectionView : UICollectionView = SeriesCollectionView()
+    private lazy var movieCollectionView : UICollectionView = SeriesCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout(), viewModel: HomeViewModel())
 }
 
