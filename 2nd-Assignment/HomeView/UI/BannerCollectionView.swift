@@ -8,13 +8,17 @@
 import UIKit
 
 class BannerCollectionView: UICollectionView{
-
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+    private var viewModel: HomeViewModel!
+    private var bannerData: [BannerModel] = [] 
+    
+    init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout, viewModel: HomeViewModel) {
+        self.viewModel = viewModel
         let flowLayout = BannerCollectionView.horizontalFlowLayout()
         super.init(frame: frame, collectionViewLayout: flowLayout)
         self.backgroundColor = .black
         register()
         setDelegate()
+        setUpBindings()
     }
     
     required init?(coder: NSCoder) {
@@ -28,18 +32,14 @@ class BannerCollectionView: UICollectionView{
         )
     }
     
-    let homeVC = HomeViewController()
-    
     private func setDelegate(){
         self.delegate = self
         self.dataSource = self
     }
     
-    private var bannerData = BannerModel.bannerDummy {
-       didSet {
-           self.reloadData()
-       }
-   }
+    private func setUpBindings() {
+        self.bannerData = viewModel.bannerDummy
+    }
 }
 
 extension BannerCollectionView : UICollectionViewDelegateFlowLayout {

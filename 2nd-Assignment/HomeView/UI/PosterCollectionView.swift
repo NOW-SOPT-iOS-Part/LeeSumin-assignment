@@ -8,12 +8,16 @@
 import UIKit
 
 class PosterCollectionView: UICollectionView{
+    private var viewModel : HomeViewModel!
+    private var posterData : [PosterModel] = []
     
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+    init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout, viewModel: HomeViewModel) {
+        self.viewModel = viewModel
         let flowLayout = PosterCollectionView.horizontalFlowLayout()
         super.init(frame: frame, collectionViewLayout: flowLayout)
         register()
         setDelegate()
+        setupBindings()
         isPagingEnabled = true //한 cell씩만 보여줌 (셀 중간에 멈추지 x)
     }
     
@@ -28,19 +32,15 @@ class PosterCollectionView: UICollectionView{
         )
     }
     
-    let homeVC = HomeViewController()
-    
     private func setDelegate(){
         self.delegate = self
         self.dataSource = self
     }
     
-    private var posterData = PosterModel.posterDummy {
-       didSet {
-           self.reloadData()
-       }
-   } //didSet??
-    
+    private func setupBindings() {
+        self.posterData = viewModel.posterDummy
+    }
+
     private var posterCircleView = PosterCircleView()
     //이 view를 재로딩해서 다시 그려야 하는데 그게 맞나?! 방법을 생각해야 됨
 }

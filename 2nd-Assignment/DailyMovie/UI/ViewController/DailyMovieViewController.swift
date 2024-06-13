@@ -11,21 +11,26 @@ import Moya
 
 class DailyMovieViewController: UIViewController, UICollectionViewDelegate {
 
-    private let rootView = DailyMovieView()
-    private var collectionView : UICollectionView
+    private let rootView: DailyMovieView
+    private let viewModel: DailyMovieViewModel
+    private var collectionView: UICollectionView
     
-    private var dailyMovieData: [DailyMovieInfo] = []
+    private var dailyMovieInfo: [DailyMovieInfo] = []
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setData()
         register()
         setCollectionView()
+        viewModel.dailyMovieInfo.bind { [weak self] movies in
+            self?.handleDailyMovieInfo(dailyMovieInfo: movies)
+        }
     }
     
-    init() {
-        self.collectionView = rootView.collectionView
-        super.init(nibName: nil, bundle: nil)
+    init(rootView: DailyMovieView, viewModel: DailyMovieViewModel) {
+          self.rootView = rootView
+          self.viewModel = viewModel
+          self.collectionView = rootView.collectionView
+          super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -49,40 +54,8 @@ class DailyMovieViewController: UIViewController, UICollectionViewDelegate {
         )
     }
     
-    func setData() {
-        let key = "95dd7589a2ca8b8126c77eabf642771a"
-        let targetDt = "20240510" // Date.movieDate()
-
-        DailyMovieService.shared.getDailyMovie(key: key, targetDt: targetDt) { [weak self] response in
-            switch response{
-            case .success(let data):
-                // print("@Log - \(data)")
-                if let movieData = data as? DailyMovieResponse {
-                    let dailyMovieData = movieData.boxOfficeResult.dailyBoxOfficeList.map {
-                        DailyMovieInfo(rank: $0.rank, name: $0.movieNm, openDate: $0.openDt, audience: $0.audiAcc)
-                    }
-                    self?.handleDailyMovieData(dailyMovieData)
-                    print("@Log - \(dailyMovieData)")
-               } else {
-                   print("Decoding error / Unexpected data format")
-               }
-            case .decodedErr:
-                print("decoding error")
-            case .networkFail:
-                print("network fail")
-            case .pathErr:
-                print("path error")
-            case .requestErr:
-                print("request error")
-            case .serverErr:
-                print("server error")
-            }
-        }
-    }
-    
-    func handleDailyMovieData(_ dailyMovieData: [DailyMovieInfo]) {
-        self.dailyMovieData = dailyMovieData
-        print(dailyMovieData)
+    func handleDailyMovieInfo(dailyMovieInfo: [DailyMovieInfo]!) {
+        self.dailyMovieInfo = dailyMovieInfo
         collectionView.reloadData()
     }
 }
@@ -109,14 +82,12 @@ extension DailyMovieViewController: UICollectionViewDelegateFlowLayout {
 
 extension DailyMovieViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // print("@log: hi \(dailyMovieData.count)")
-        // print("@log: hello \(dailyMovieData)")
-        return dailyMovieData.count
+        return dailyMovieInfo.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DailyMovieCollectionViewCell.identifier, for: indexPath) as? DailyMovieCollectionViewCell else { return UICollectionViewCell() }
-        cell.dataBind(dailyMovieData[indexPath.item], dailyMovieRow: indexPath.item)
+        cell.dataBind(dailyMovieInfo[indexPath.item], dailyMovieRow: indexPath.item)
         return cell
     }
 }
