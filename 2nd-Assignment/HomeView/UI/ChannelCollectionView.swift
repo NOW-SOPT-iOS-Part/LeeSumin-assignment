@@ -8,13 +8,20 @@
 import UIKit
 
 class ChannelCollectionView: UICollectionView{
-
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+    private var viewModel: HomeViewModel!
+    private var channelData: [ChannelModel] = [] {
+        didSet {
+            self.reloadData()
+        }
+    } //didset이 꼭 필요한가?
+    init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout, viewModel: HomeViewModel) {
+        self.viewModel = viewModel
         let flowLayout = ChannelCollectionView.horizontalFlowLayout()
         super.init(frame: frame, collectionViewLayout: flowLayout)
         self.backgroundColor = .black
         register()
         setDelegate()
+        setupBindings()
     }
     
     required init?(coder: NSCoder){
@@ -33,18 +40,14 @@ class ChannelCollectionView: UICollectionView{
         )
     }
     
-    let homeVC = HomeViewController()
-    
     private func setDelegate(){
         self.delegate = self
         self.dataSource = self
     }
     
-    private var channelData = ChannelModel.channelDummy {
-       didSet {
-           self.reloadData()
-       }
-   }
+    private func setupBindings() {
+        self.channelData = viewModel.channelDummy
+    }
 }
 
 extension ChannelCollectionView : UICollectionViewDelegateFlowLayout {

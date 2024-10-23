@@ -18,12 +18,10 @@ final class DailyMovieService {
 }
 
 extension DailyMovieService {
-    public func judgeStatus<T: Codable>(by statusCode: Int, _ data: Data, _ object: T.Type) -> NetworkResult<Any> {
+    public func judgeStatus<T: Codable>(by statusCode: Int, _ data: Data, _ object: T.Type) -> NetworkResult<DailyMovieDto> {
         switch statusCode {
         case 200..<205:
-            let decodingResult = self.decodeDailyMovieResponse(from: data)
-            return decodingResult
-//            return .success(decodingResult)
+            return decodeDailyMovieResponse(from: data)
         case 400..<500:
             return .requestErr
         case 500:
@@ -33,26 +31,24 @@ extension DailyMovieService {
         }
     }
 
-    private func decodeDailyMovieResponse(from data: Data) -> NetworkResult<Any> {
+    private func decodeDailyMovieResponse(from data: Data) -> NetworkResult<DailyMovieDto> {
         do {
             let decoder = JSONDecoder()
-            let dailyMovieResponse = try decoder.decode(DailyMovieResponse.self, from: data)
-            return .success(dailyMovieResponse as Any)
+            let dailyMovieResponse = try decoder.decode(DailyMovieDto.self, from: data)
+            return .success(dailyMovieResponse as DailyMovieDto)
         } catch {
             return .decodedErr
         }
     }
     
-    func getDailyMovie(key: String, targetDt: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getDailyMovie(key: String, targetDt: String, completion: @escaping (NetworkResult<DailyMovieDto>) -> Void) {
         movieProvider.request(.getDailyMovie(key: key, targetDt: targetDt)) {
             result in
             switch result{
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
-        
-                let networkResult = self.judgeStatus(by: statusCode, data, DailyMovieResponse.self)
-                // print("@Log1 - \(networkResult)")
+                let networkResult = self.judgeStatus(by: statusCode, data, DailyMovieDto.self)
                 completion(networkResult)
             case .failure(_):
                 completion(.networkFail)

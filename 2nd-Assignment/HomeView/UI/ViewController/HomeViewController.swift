@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 class HomeViewController: UIViewController {
+    let viewModel = HomeViewModel()
     var topInset : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +18,6 @@ class HomeViewController: UIViewController {
         
         let navigationBarHeight = navigationController?.navigationBar.frame.height ?? 0.0
         topInset = Int(navigationBarHeight + UIApplication.shared.statusBarFrame.height) //포인트!!!!!!
-        
         setTitleViewLayout()
         setupLayout()
         // Do any additional setup after loading the view.
@@ -35,10 +35,6 @@ class HomeViewController: UIViewController {
         scrollView.snp.makeConstraints{
             $0.edges.equalToSuperview()
         }
-        /// !!!!!!!! 왜????? scrollView 안에 넣으려 했는데 scrollview 안에 posterView를 넣으면 posterview cell 자체가 initialize이 안 됨
-        /// 안 됐었는데..? 
-        /// 레이아웃이 이상해짐
-        
         [posterView, titleView, headerView, posterCircleView, tvingEssentialHeaderView, tvingEssentialCollectionView, topChannelHeaderView, topChannelCollectionView, paramountContentHeaderView, paramountContentCollectionView, bannerCollectionView, movieHeaderView, movieCollectionView ].forEach{
             scrollView.addSubview($0)
         }
@@ -155,26 +151,25 @@ class HomeViewController: UIViewController {
         let view = UIView()
         view.backgroundColor = .clear
         return view
-    }() //addSubView : private let (x) /  private lazy var (o)
-    
+    }()
     
     private lazy var headerView : UIStackView  = HeaderView()
     private lazy var posterCircleView : UIStackView  = PosterCircleView()
-    private lazy var posterView : UICollectionView  = PosterCollectionView()
+    private lazy var posterView : UICollectionView  = PosterCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout(), viewModel: HomeViewModel())
     
     private lazy var tvingEssentialHeaderView : UIView = {
         let headerView = SeriesCollectionHeaderView()
         headerView.configure(withTitle: "티빙에서 꼭 봐야하는 콘텐츠")
         return headerView
     }()
-    private lazy var tvingEssentialCollectionView : UICollectionView = SeriesCollectionView()
+    private lazy var tvingEssentialCollectionView : UICollectionView = SeriesCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout(), viewModel: HomeViewModel())
     
     private lazy var topChannelHeaderView: UIView = {
         let headerView = SeriesCollectionHeaderView()
         headerView.configure(withTitle: "인기 LIVE 채널")
         return headerView
     }()
-    private lazy var topChannelCollectionView : UICollectionView = ChannelCollectionView()
+    private lazy var topChannelCollectionView : UICollectionView = ChannelCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout(), viewModel: HomeViewModel())
 
     
     private lazy var paramountContentHeaderView: UIView = {
@@ -182,16 +177,16 @@ class HomeViewController: UIViewController {
         headerView.configure(withTitle: "1화 무료! 파라마운트+ 인기 시리즈")
         return headerView
     }()
-    private lazy var paramountContentCollectionView : UICollectionView = SeriesCollectionView()
+    private lazy var paramountContentCollectionView : UICollectionView = SeriesCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout(), viewModel: HomeViewModel())
     
    
-    private lazy var bannerCollectionView : UICollectionView = BannerCollectionView()
+    private lazy var bannerCollectionView : UICollectionView = BannerCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout(), viewModel: HomeViewModel())
 
     private lazy var movieHeaderView: UIView = {
         let headerView = SeriesCollectionHeaderView()
         headerView.configure(withTitle: "마술보다 더 신비로운 영화(신비로운 영화사전님)")
         return headerView
     }()
-    private lazy var movieCollectionView : UICollectionView = SeriesCollectionView()
+    private lazy var movieCollectionView : UICollectionView = SeriesCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout(), viewModel: HomeViewModel())
 }
 
